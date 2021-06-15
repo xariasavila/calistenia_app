@@ -1,7 +1,7 @@
-import 'package:calistenia_app/pages/cuenta.dart';
-import 'package:calistenia_app/pages/entrenamiento.dart';
-import 'package:calistenia_app/pages/inicio.dart';
-import 'package:calistenia_app/pages/mapa.dart';
+import 'package:calistenia_app/screens/cuenta.dart';
+import 'package:calistenia_app/screens/entrenamiento.dart';
+import 'package:calistenia_app/screens/inicio.dart';
+import 'package:calistenia_app/screens/mapa.dart';
 import 'package:flutter/material.dart';
 
 import '../constant.dart';
