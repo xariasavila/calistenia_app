@@ -1,0 +1,11 @@
+-center
+se fija en el centro
+-container: puede uusar paddings
+row: 
+column
+expanded
+listview
+stack
+
+
+

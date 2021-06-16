@@ -1,4 +1,4 @@
-import 'package:calistenia_app/pages/mainscreen.dart';
+import 'package:calistenia_app/screens/mainscreen.dart';
 import 'package:flutter/material.dart';
 
 /// This is the stateful widget that the main application instantiates.
@@ -33,6 +33,7 @@ Widget cuerpo(BuildContext context) {
         children: <Widget>[
           titulo(),
           rut(),
+          password(),
           SizedBox(height: 15),
           botonEntrar(context),
         ],
@@ -45,7 +46,7 @@ Widget titulo() {
   return Text(
     "Calistenia Chile",
     style: TextStyle(
-        color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),
+        color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
   );
 }
 
@@ -54,7 +55,33 @@ Widget rut() {
     padding: EdgeInsets.symmetric(horizontal: 100, vertical: 5),
     child: TextField(
       decoration: InputDecoration(
-          hintText: "Rut Alumno", fillColor: Colors.white, filled: true),
+        hintText: "Rut Alumno",
+        fillColor: Colors.white,
+        filled: true,
+        hintStyle: TextStyle(color: Colors.grey),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.black),
+        ),
+      ),
+      style: TextStyle(color: Colors.black),
+    ),
+  );
+}
+
+Widget password() {
+  return Container(
+    padding: EdgeInsets.symmetric(horizontal: 100, vertical: 5),
+    child: TextField(
+      decoration: InputDecoration(
+        hintText: "Constraseña",
+        fillColor: Colors.white,
+        filled: true,
+        hintStyle: TextStyle(color: Colors.grey),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.black),
+        ),
+      ),
+      style: TextStyle(color: Colors.black),
     ),
   );
 }
@@ -71,6 +98,6 @@ Widget botonEntrar(BuildContext context) {
         MaterialPageRoute(builder: (context) => MainScreen()),
       );
     },
-    child: Text('Entrar', style: TextStyle(fontSize: 20)),
+    child: Text('Entrenar', style: TextStyle(fontSize: 20)),
   );
 }
