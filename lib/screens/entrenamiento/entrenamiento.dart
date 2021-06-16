@@ -1,3 +1,5 @@
+import 'package:calistenia_app/screens/entrenamiento/ejercicios.dart';
+import 'package:calistenia_app/screens/entrenamiento/rutinas.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant.dart';
@@ -42,7 +44,7 @@ class _EntrenamientoState extends State<Entrenamiento> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => rutinas()),
+                    MaterialPageRoute(builder: (context) => Rutinas()),
                   );
                 },
               ),
@@ -77,7 +79,7 @@ class _EntrenamientoState extends State<Entrenamiento> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ejercicios()),
+                    MaterialPageRoute(builder: (context) => Ejercicios()),
                   );
                 },
               ),
