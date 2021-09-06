@@ -8,13 +8,14 @@ Widget cardRutinas(BuildContext context) {
       margin: EdgeInsets.all(30),
       elevation: 10,
       child: ClipRRect(
+        clipBehavior: Clip.hardEdge,
         borderRadius: BorderRadius.circular(50),
         child: Column(
           children: <Widget>[
             Ink.image(
-              image: NetworkImage(
-                'https://i.dietdoctor.com/wp-content/uploads/2018/08/man_kettlebell.jpg?auto=compress%2Cformat&w=800&h=449&fit=crop',
-              ),
+              height: 200,
+              fit: BoxFit.fitWidth,
+              image: AssetImage('assets/images/rutina.jpg'),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -23,8 +24,6 @@ Widget cardRutinas(BuildContext context) {
                   );
                 },
               ),
-              height: 190,
-              fit: BoxFit.cover,
             ),
             Container(
               padding: EdgeInsets.all(10),
@@ -41,6 +40,7 @@ Widget cardEjercicios(BuildContext context) {
       margin: EdgeInsets.all(30),
       elevation: 10,
       child: ClipRRect(
+        clipBehavior: Clip.hardEdge,
         borderRadius: BorderRadius.circular(20),
         child: Column(
           children: <Widget>[
@@ -56,8 +56,8 @@ Widget cardEjercicios(BuildContext context) {
                   );
                 },
               ),
-              height: 190,
-              fit: BoxFit.cover,
+              height: 200,
+              fit: BoxFit.fitWidth,
             ),
             Container(
               padding: EdgeInsets.all(10),
@@ -74,14 +74,15 @@ Widget cardRutinasImage(BuildContext context) {
       margin: EdgeInsets.all(30),
       elevation: 10,
       child: ClipRRect(
+        clipBehavior: Clip.hardEdge,
         child: Column(
           children: <Widget>[
             Ink.image(
               image: NetworkImage(
                 'https://i.dietdoctor.com/wp-content/uploads/2018/08/man_kettlebell.jpg?auto=compress%2Cformat&w=800&h=449&fit=crop',
               ),
-              height: 150,
-              fit: BoxFit.cover,
+              height: 200,
+              fit: BoxFit.fitWidth,
             ),
             Container(
               padding: EdgeInsets.all(5),
