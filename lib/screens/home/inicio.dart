@@ -11,7 +11,14 @@ class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Calistenia APP")),
-    );
+        appBar: AppBar(title: Text("Calistenia APP")),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/rutinas.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ));
   }
 }

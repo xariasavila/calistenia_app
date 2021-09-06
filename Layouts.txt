@@ -8,4 +8,166 @@ listview
 stack
 
 
+body: 
+center, 
 
+
+
+SCAFFOLD:
+Scaffold({Key? key, PreferredSizeWidget? appBar, Widget? body, Widget? floatingActionButton, FloatingActionButtonLocation? floatingActionButtonLocation, FloatingActionButtonAnimator? floatingActionButtonAnimator, List<Widget>? persistentFooterButtons, Widget? drawer, DrawerCallback? onDrawerChanged, Widget? endDrawer, DrawerCallback? onEndDrawerChanged, Widget? bottomNavigationBar, Widget? bottomSheet, Color? backgroundColor, bool? resizeToAvoidBottomInset, bool primary, DragStartBehavior drawerDragStartBehavior, bool extendBody, bool extendBodyBehindAppBar, Color? drawerScrimColor, double? drawerEdgeDragWidth, bool drawerEnableOpenDragGesture, bool endDrawerEnableOpenDragGesture, String? restorationId})
+Creates a visual scaffold for material design widgets.
+
+-appBar
+-backgroundColor
+-body: El contenido primario del Scaffold
+Es decir, aquí se puede colocar el widget principal, tu pantalla de Home o lo que desees mostrar solo tiene que entregarlo en forma de widget y el body se encargara de hacer el render.
+-bottomNavigationBar 
+-BottomAppBar
+-drawer y endDrawer : menu lateral  en appbar (3 barritas)
+-floatingActionButton: boton flotante
+-bottomSheet: cuadro sobre el bottomNavigationBar
+
+
+CENTER
+Center({Key? key, double? widthFactor, double? heightFactor, Widget? child})
+Creates a widget that centers its child.
+
+alignment → AlignmentGeometry How to align the child. [...]
+child → Widget? The widget below this widget in the tree. [...]
+key → Key? Controls how one widget replaces another widget in the tree. [...]
+
+
+CONTAINER
+Container({Key? key, AlignmentGeometry? alignment, EdgeInsetsGeometry? padding, Color? color, Decoration? decoration, Decoration? foregroundDecoration, double? width, double? height, BoxConstraints? constraints, EdgeInsetsGeometry? margin, Matrix4? transform, AlignmentGeometry? transformAlignment, Widget? child, Clip clipBehavior})
+Creates a widget that combines common painting, positioning, and sizing widgets. [...]
+
+alignment → AlignmentGeometry?
+height y width
+
+Align the child within the container. [...]
+child → Widget?The child contained by the container. [...]
+clipBehavior → Clip The clip behavior when Container.decoration is not null. [...]
+color → Color?The color to paint behind the child. [...]
+constraints → BoxConstraints?Additional constraints to apply to the child. [...]
+decoration → Decoration?The decoration to paint behind the child. [...
+foregroundDecoration → Decoration?The decoration to paint in front of the child
+margin → EdgeInsetsGeometry?Empty space to surround the decoration and child.
+padding → EdgeInsetsGeometry?Empty space to inscribe inside the decoration. The child, if any, is placed inside this padding. [...]
+transformAlignment → AlignmentGeometry?The alignment of the origin, relative to the size of the container, if transform is specified. [...]
+
+COLUMN  class Null safety
+Column({Key? key, MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start, MainAxisSize mainAxisSize = MainAxisSize.max, CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+TextDirection? textDirection, VerticalDirection verticalDirection = VerticalDirection.down, TextBaseline? textBaseline, List<Widget> children = const <Widget>[]})
+Creates a vertical array of children. [...]
+
+
+children → List<Widget>
+The widgets below this widget in the tree. [...]
+final, inherited
+clipBehavior → Clip
+The content will be clipped (or not) according to this option. [...]
+final, inherited
+crossAxisAlignment → CrossAxisAlignment
+How the children should be placed along the cross axis. [...]
+final, inherited
+direction → Axis
+The direction to use as the main axis. [...]
+final, inherited
+hashCode → int
+The hash code for this object. [...]
+@nonVirtual, read-only, inherited
+key → Key?
+Controls how one widget replaces another widget in the tree. [...]
+final, inherited
+mainAxisAlignment → MainAxisAlignment
+How the children should be placed along the main axis. [...]
+final, inherited
+mainAxisSize → MainAxisSize
+How much space should be occupied in the main axis. [...]
+final, inherited
+runtimeType → Type
+A representation of the runtime type of the object.
+read-only, inherited
+textBaseline → TextBaseline?
+If aligning items according to their baseline, which baseline to use. [...]
+final, inherited
+textDirection → TextDirection?
+Determines the order to lay children out horizontally and how to interpret start and end in the horizontal direction. [...]
+final, inherited
+verticalDirection → VerticalDirection
+Determines the order to lay children out vertically and how to interpret start and end in the vertical direction. [...]
+final, inherited
+
+
+ROW
+({Key? key, MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start, MainAxisSize mainAxisSize = MainAxisSize.max, CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center, TextDirection? textDirection, VerticalDirection verticalDirection = VerticalDirection.down, TextBaseline? textBaseline, List<Widget> children = const <Widget>[]})
+Creates a horizontal array of children. [...]
+
+children → List<Widget>
+The widgets below this widget in the tree. [...]
+final, inherited
+clipBehavior → Clip
+The content will be clipped (or not) according to this option. [...]
+final, inherited
+crossAxisAlignment → CrossAxisAlignment
+How the children should be placed along the cross axis. [...]
+final, inherited
+direction → Axis
+The direction to use as the main axis. [...]
+final, inherited
+hashCode → int
+The hash code for this object. [...]
+@nonVirtual, read-only, inherited
+key → Key?
+Controls how one widget replaces another widget in the tree. [...]
+final, inherited
+mainAxisAlignment → MainAxisAlignment
+How the children should be placed along the main axis. [...]
+final, inherited
+mainAxisSize → MainAxisSize
+How much space should be occupied in the main axis. [...]
+final, inherited
+runtimeType → Type
+A representation of the runtime type of the object.
+read-only, inherited
+textBaseline → TextBaseline?
+If aligning items according to their baseline, which baseline to use. [...]
+final, inherited
+textDirection → TextDirection?
+Determines the order to lay children out horizontally and how to interpret start and end in the horizontal direction. [...]
+final, inherited
+verticalDirection → VerticalDirection
+Determines the order to lay children out vertically and how to interpret start and end in the vertical direction. [...]
+final, inherited
+
+
+
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text('Expanded Column Sample'),
+    ),
+    body: Center(
+       child: Column(
+        children: <Widget>[
+          Container(
+            color: Colors.blue,
+            height: 100,
+            width: 100,
+          ),
+          Expanded(
+            child: Container(
+              color: Colors.amber,
+              width: 100,
+            ),
+          ),
+          Container(
+            color: Colors.blue,
+            height: 100,
+            width: 100,
+          ),
+        ],
+      ),
+    ),
+  );
+ 

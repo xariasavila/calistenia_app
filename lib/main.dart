@@ -1,5 +1,4 @@
-import 'package:calistenia_app/screens/login/login.dart';
-
+import 'package:calistenia_app/screens/login/GlassmorpicSignUpPage.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: _title,
       theme: ThemeData.dark(),
-      home: Login(),
+      home: GlassMorphism(),
     );
   }
 }

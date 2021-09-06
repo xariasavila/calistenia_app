@@ -3,7 +3,6 @@ import 'package:calistenia_app/screens/entrenamiento/entrenamiento.dart';
 import 'package:calistenia_app/screens/home/inicio.dart';
 import 'package:calistenia_app/screens/map/mapa.dart';
 import 'package:flutter/material.dart';
-
 import '../constant.dart';
 
 class MainScreen extends StatefulWidget {
@@ -15,7 +14,12 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int pageIndex = 0;
-  final List<Widget> pageList = [Inicio(), Entrenamiento(), Mapa(), Cuenta()];
+  final List<Widget> pageList = [
+    Inicio(),
+    Entrenamiento(),
+    Mapa(),
+    Cuenta(),
+  ];
 
   @override
   Widget build(BuildContext context) {

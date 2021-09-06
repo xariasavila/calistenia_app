@@ -24,9 +24,7 @@ Widget cuerpo(BuildContext context) {
   return Container(
     decoration: BoxDecoration(
         image: DecorationImage(
-            image: NetworkImage(
-                "https://media4.giphy.com/media/Qx5UZ6WLmWljbOYILH/giphy.gif?cid=ecf05e472kozs3f9oc1mlxpfb6rkaqcijxvew0qcc64eu3uc&rid=giphy.gif&ct=g"),
-            fit: BoxFit.cover)),
+            image: AssetImage('assets/rutina.jpg'), fit: BoxFit.cover)),
     child: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
