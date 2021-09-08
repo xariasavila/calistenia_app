@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:calistenia_app/api/books_api.dart';
 import 'package:calistenia_app/models/book.dart';
+import 'package:calistenia_app/screens/entrenamiento/ejercicios/detalleEjercicio.dart';
 import 'package:calistenia_app/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -89,5 +90,12 @@ class FilterNetworkListPageState extends State<FilterNetworkListPage> {
         ),
         title: Text(book.title),
         subtitle: Text(book.author),
+        trailing: Icon(Icons.arrow_forward),
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => DetalleEjercicio(book.id)));
+        },
       );
 }

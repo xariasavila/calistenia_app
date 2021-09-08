@@ -18,7 +18,7 @@ class _RutinasState extends State<Rutinas> {
     return Scaffold(
         backgroundColor: contentColorLightTheme,
         appBar: AppBar(
-          title: Text('Rutinas Nivel'),
+          title: Text('Nivel Rutinas'),
         ),
         body: ListView(
           children: <Widget>[
@@ -34,9 +34,9 @@ class _RutinasState extends State<Rutinas> {
 Widget cardRutinasFacil(BuildContext context) {
   return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      clipBehavior: Clip.hardEdge,
       margin: EdgeInsets.all(30),
       elevation: 10,
-      clipBehavior: Clip.hardEdge,
       child: ClipRRect(
         child: Column(
           children: <Widget>[
@@ -44,7 +44,7 @@ Widget cardRutinasFacil(BuildContext context) {
                 image: AssetImage('assets/images/rutinas.jpg'),
                 height: 200,
                 //width: 200,
-                fit: BoxFit.fitWidth,
+                fit: BoxFit.cover,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -75,7 +75,7 @@ Widget cardRutinasIntermedio(BuildContext context) {
                 image: AssetImage('assets/images/rutinas.jpg'),
                 height: 200,
                 //width: 200,
-                fit: BoxFit.fitWidth,
+                fit: BoxFit.cover,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -107,7 +107,7 @@ Widget cardRutinasAvanzado(BuildContext context) {
                 image: AssetImage('assets/images/rutinas.jpg'),
                 height: 200,
                 //width: 200,
-                fit: BoxFit.fitWidth,
+                fit: BoxFit.cover,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(

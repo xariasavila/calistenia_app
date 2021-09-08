@@ -14,7 +14,7 @@ Widget cardRutinas(BuildContext context) {
           children: <Widget>[
             Ink.image(
               height: 200,
-              fit: BoxFit.fitWidth,
+              fit: BoxFit.cover,
               image: AssetImage('assets/images/rutina.jpg'),
               child: InkWell(
                 onTap: () {
@@ -27,7 +27,7 @@ Widget cardRutinas(BuildContext context) {
             ),
             Container(
               padding: EdgeInsets.all(10),
-              child: Text('RUTINAS'),
+              child: Text('Rutinas'),
             ),
           ],
         ),
@@ -45,9 +45,7 @@ Widget cardEjercicios(BuildContext context) {
         child: Column(
           children: <Widget>[
             Ink.image(
-              image: NetworkImage(
-                'https://i0.wp.com/blog.alexdevero.com/wp-content/uploads/2016/02/CalisthenicsWhy-It-Is-The-Best-Hobby-post.jpg?fit=1024%2C576&ssl=1',
-              ),
+              image: AssetImage('assets/images/ejercicios.jpg'),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -57,36 +55,11 @@ Widget cardEjercicios(BuildContext context) {
                 },
               ),
               height: 200,
-              fit: BoxFit.fitWidth,
+              fit: BoxFit.cover,
             ),
             Container(
               padding: EdgeInsets.all(10),
-              child: Text('EJERCICIOS'),
-            ),
-          ],
-        ),
-      ));
-}
-
-Widget cardRutinasImage(BuildContext context) {
-  return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      margin: EdgeInsets.all(30),
-      elevation: 10,
-      child: ClipRRect(
-        clipBehavior: Clip.hardEdge,
-        child: Column(
-          children: <Widget>[
-            Ink.image(
-              image: NetworkImage(
-                'https://i.dietdoctor.com/wp-content/uploads/2018/08/man_kettlebell.jpg?auto=compress%2Cformat&w=800&h=449&fit=crop',
-              ),
-              height: 200,
-              fit: BoxFit.fitWidth,
-            ),
-            Container(
-              padding: EdgeInsets.all(5),
-              child: Text('RUTINAS'),
+              child: Text('Ejercicios'),
             ),
           ],
         ),
