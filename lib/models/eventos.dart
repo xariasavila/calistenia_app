@@ -6,7 +6,7 @@ class Eventos {
   final String descripcion;
   final int idinstructor;
 
-  Eventos({
+  const Eventos({
     required this.idevento,
     required this.nombre,
     required this.fecha,
@@ -15,14 +15,21 @@ class Eventos {
     required this.idinstructor,
   });
 
-  factory Eventos.fromJson(Map<String, dynamic> json) {
-    return Eventos(
-      idevento: json['idevento'],
-      nombre: json['nombre'],
-      fecha: json['fecha'],
-      hora: json['hora'],
-      descripcion: json['descripcion'],
-      idinstructor: json['idinstructor'],
-    );
-  }
+  factory Eventos.fromJson(Map<String, dynamic> json) => Eventos(
+        idevento: json['idevento'],
+        nombre: json['nombre'],
+        fecha: json['fecha'],
+        hora: json['hora'],
+        descripcion: json['descripcion'],
+        idinstructor: json['idinstructor'],
+      );
+
+  Map<String, dynamic> toJson() => {
+        'idevento': idevento,
+        'nombre': nombre,
+        'fecha': fecha,
+        'hora': hora,
+        'descripcion': descripcion,
+        'idinstructor': idinstructor,
+      };
 }

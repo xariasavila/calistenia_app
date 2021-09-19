@@ -23,6 +23,7 @@ class _MapaState extends State<Mapa> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('Parques Cercanos'),
       ),
       body: Stack(

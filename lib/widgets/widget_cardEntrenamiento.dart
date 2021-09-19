@@ -2,14 +2,49 @@ import 'package:calistenia_app/screens/entrenamiento/ejercicios/ejercicios.dart'
 import 'package:calistenia_app/screens/entrenamiento/rutinas/rutinas.dart';
 import 'package:flutter/material.dart';
 
-Widget cardRutinas(BuildContext context) {
+Widget cardEjercicios(BuildContext context) {
   return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      color: Colors.blue.shade600,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+      clipBehavior: Clip.hardEdge,
       margin: EdgeInsets.all(30),
       elevation: 10,
       child: ClipRRect(
-        clipBehavior: Clip.hardEdge,
-        borderRadius: BorderRadius.circular(50),
+        child: Column(
+          children: <Widget>[
+            Ink.image(
+              height: 200,
+              fit: BoxFit.cover,
+              image: AssetImage('assets/images/ejercicios.jpg'),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Ejercicios()),
+                  );
+                },
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: Text('Ejercicios',
+                  style: TextStyle(
+                    fontSize: 18,
+                  )),
+            ),
+          ],
+        ),
+      ));
+}
+
+Widget cardRutinas(BuildContext context) {
+  return Card(
+      color: Colors.blue.shade600,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+      clipBehavior: Clip.hardEdge,
+      margin: EdgeInsets.all(30),
+      elevation: 10,
+      child: ClipRRect(
         child: Column(
           children: <Widget>[
             Ink.image(
@@ -27,39 +62,10 @@ Widget cardRutinas(BuildContext context) {
             ),
             Container(
               padding: EdgeInsets.all(10),
-              child: Text('Rutinas'),
-            ),
-          ],
-        ),
-      ));
-}
-
-Widget cardEjercicios(BuildContext context) {
-  return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      margin: EdgeInsets.all(30),
-      elevation: 10,
-      child: ClipRRect(
-        clipBehavior: Clip.hardEdge,
-        borderRadius: BorderRadius.circular(20),
-        child: Column(
-          children: <Widget>[
-            Ink.image(
-              image: AssetImage('assets/images/ejercicios.jpg'),
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Ejercicios()),
-                  );
-                },
-              ),
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-            Container(
-              padding: EdgeInsets.all(10),
-              child: Text('Ejercicios'),
+              child: Text('Rutinas',
+                  style: TextStyle(
+                    fontSize: 18,
+                  )),
             ),
           ],
         ),

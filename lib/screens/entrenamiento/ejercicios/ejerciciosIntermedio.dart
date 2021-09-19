@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 
 import '../../../constant.dart';
 
-class RutinasFacil extends StatelessWidget {
-  @override
+class EjerciciosIntermedio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: contentColorLightTheme,
       appBar: AppBar(
-        title: Text('Rutinas Fácil'),
+        title: Text('Ejercicios intermedios'),
       ),
       body: buildPages(),
     );

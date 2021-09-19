@@ -2,25 +2,19 @@ import 'package:calistenia_app/constant.dart';
 import 'package:calistenia_app/screens/entrenamiento/rutinas/rutinasDificil.dart';
 import 'package:calistenia_app/screens/entrenamiento/rutinas/rutinasFacil.dart';
 import 'package:calistenia_app/screens/entrenamiento/rutinas/rutinasIntermedio.dart';
-
 import 'package:flutter/material.dart';
 
-class Rutinas extends StatefulWidget {
-  Rutinas({Key? key}) : super(key: key);
-
-  @override
-  _RutinasState createState() => _RutinasState();
-}
-
-class _RutinasState extends State<Rutinas> {
+class Rutinas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: contentColorLightTheme,
         appBar: AppBar(
+          centerTitle: true,
           title: Text('Nivel Rutinas'),
         ),
         body: ListView(
+          //padding: EdgeInsets.all(6.0),
           children: <Widget>[
             titulo(context),
             cardRutinasFacil(context),
@@ -33,10 +27,11 @@ class _RutinasState extends State<Rutinas> {
 
 Widget cardRutinasFacil(BuildContext context) {
   return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      color: Colors.green,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       clipBehavior: Clip.hardEdge,
+      elevation: 5,
       margin: EdgeInsets.all(30),
-      elevation: 10,
       child: ClipRRect(
         child: Column(
           children: <Widget>[
@@ -44,7 +39,7 @@ Widget cardRutinasFacil(BuildContext context) {
                 image: AssetImage('assets/images/rutinas.jpg'),
                 height: 200,
                 //width: 200,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -55,7 +50,10 @@ Widget cardRutinasFacil(BuildContext context) {
                 )),
             Container(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-              child: Text('Rutina Facil'),
+              child: Text('Rutina Fácil',
+                  style: TextStyle(
+                    fontSize: 18,
+                  )),
             ),
           ],
         ),
@@ -64,7 +62,8 @@ Widget cardRutinasFacil(BuildContext context) {
 
 Widget cardRutinasIntermedio(BuildContext context) {
   return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      color: Colors.orange,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       clipBehavior: Clip.hardEdge,
       margin: EdgeInsets.all(30),
       elevation: 10,
@@ -75,7 +74,7 @@ Widget cardRutinasIntermedio(BuildContext context) {
                 image: AssetImage('assets/images/rutinas.jpg'),
                 height: 200,
                 //width: 200,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -87,7 +86,10 @@ Widget cardRutinasIntermedio(BuildContext context) {
                 )),
             Container(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-              child: Text('Rutina Intermedia'),
+              child: Text(
+                'Rutina Intermedia',
+                style: TextStyle(fontSize: 18),
+              ),
             ),
           ],
         ),
@@ -96,7 +98,8 @@ Widget cardRutinasIntermedio(BuildContext context) {
 
 Widget cardRutinasAvanzado(BuildContext context) {
   return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+      color: Colors.red,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       clipBehavior: Clip.hardEdge,
       margin: EdgeInsets.all(30),
       elevation: 10,
@@ -107,7 +110,7 @@ Widget cardRutinasAvanzado(BuildContext context) {
                 image: AssetImage('assets/images/rutinas.jpg'),
                 height: 200,
                 //width: 200,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -118,7 +121,10 @@ Widget cardRutinasAvanzado(BuildContext context) {
                 )),
             Container(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-              child: Text('Rutina Avanzada'),
+              child: Text('Rutina Avanzada',
+                  style: TextStyle(
+                    fontSize: 18,
+                  )),
             ),
           ],
         ),
@@ -132,9 +138,9 @@ Widget titulo(BuildContext context) {
       child: Container(
         padding: EdgeInsets.all(15),
         child: Text(
-          'Selecciona un tipo de dificultad',
+          'Selecciona la dificultad',
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 25,
           ),
         ),
       ),
