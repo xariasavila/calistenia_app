@@ -28,6 +28,9 @@ dependencies:
   get_storage: ^2.0.3
   cached_network_image: ^3.1.0
   carousel_slider: ^4.0.0
+  sliding_card: ^0.1.2
+  image_picker: ^0.8.4+1
+  avatar_view: ^1.0.1
 
 dev_dependencies:
   flutter_test:
