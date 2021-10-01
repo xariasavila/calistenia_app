@@ -31,6 +31,9 @@ dependencies:
   sliding_card: ^0.1.2
   image_picker: ^0.8.4+1
   avatar_view: ^1.0.1
+  animated_bottom_navigation_bar: ^0.3.2
+  path_provider: ^2.0.5
+  xfile: ^1.1.0
 
 dev_dependencies:
   flutter_test:

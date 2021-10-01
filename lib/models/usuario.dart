@@ -9,3 +9,14 @@ class Usuario {
     required this.contrasena,
   });
 }
+
+
+
+/**
+ * 
+ * paleta colores app
+ * backend funcionando ( API FUNCIONANDO)
+ * 
+ * 
+ * 
+ */

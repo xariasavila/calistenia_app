@@ -1,16 +1,16 @@
-class Noticias {
+class Noticia {
   final int idnoticia;
   final String titulo;
   final DateTime fecha;
   final String descripcion;
 
-  const Noticias(
+  const Noticia(
       {required this.idnoticia,
       required this.titulo,
       required this.fecha,
       required this.descripcion});
 
-  factory Noticias.fromJson(Map<String, dynamic> json) => Noticias(
+  factory Noticia.fromJson(Map<String, dynamic> json) => Noticia(
       idnoticia: json['idnoticia'],
       titulo: json['titulo'],
       fecha: json['fecha'],

@@ -1,4 +1,3 @@
-import 'package:calistenia_app/constant.dart';
 import 'package:calistenia_app/screens/entrenamiento/rutinas/rutinasDificil.dart';
 import 'package:calistenia_app/screens/entrenamiento/rutinas/rutinasFacil.dart';
 import 'package:calistenia_app/screens/entrenamiento/rutinas/rutinasIntermedio.dart';
@@ -8,8 +7,9 @@ class Rutinas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: contentColorLightTheme,
+        backgroundColor: Colors.grey.shade900,
         appBar: AppBar(
+          backgroundColor: Colors.black,
           centerTitle: true,
           title: Text('Nivel Rutinas'),
         ),
@@ -27,6 +27,7 @@ class Rutinas extends StatelessWidget {
 
 Widget cardRutinasFacil(BuildContext context) {
   return Card(
+      shadowColor: Colors.orange[600],
       color: Colors.green,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       clipBehavior: Clip.hardEdge,
@@ -36,10 +37,10 @@ Widget cardRutinasFacil(BuildContext context) {
         child: Column(
           children: <Widget>[
             Ink.image(
-                image: AssetImage('assets/images/rutinas.jpg'),
+                image: AssetImage('assets/images/rutina1.jpg'),
                 height: 200,
                 //width: 200,
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -62,6 +63,7 @@ Widget cardRutinasFacil(BuildContext context) {
 
 Widget cardRutinasIntermedio(BuildContext context) {
   return Card(
+      shadowColor: Colors.orange[600],
       color: Colors.orange,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       clipBehavior: Clip.hardEdge,
@@ -71,10 +73,10 @@ Widget cardRutinasIntermedio(BuildContext context) {
         child: Column(
           children: <Widget>[
             Ink.image(
-                image: AssetImage('assets/images/rutinas.jpg'),
+                image: AssetImage('assets/images/rutina2.jpg'),
                 height: 200,
                 //width: 200,
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -98,6 +100,7 @@ Widget cardRutinasIntermedio(BuildContext context) {
 
 Widget cardRutinasAvanzado(BuildContext context) {
   return Card(
+      shadowColor: Colors.orange[600],
       color: Colors.red,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       clipBehavior: Clip.hardEdge,
@@ -107,10 +110,10 @@ Widget cardRutinasAvanzado(BuildContext context) {
         child: Column(
           children: <Widget>[
             Ink.image(
-                image: AssetImage('assets/images/rutinas.jpg'),
+                image: AssetImage('assets/images/rutina3.jpg'),
                 height: 200,
                 //width: 200,
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -140,6 +143,7 @@ Widget titulo(BuildContext context) {
         child: Text(
           'Selecciona la dificultad',
           style: TextStyle(
+            fontWeight: FontWeight.bold,
             fontSize: 25,
           ),
         ),

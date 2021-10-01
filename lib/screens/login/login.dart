@@ -63,7 +63,7 @@ class _Login extends State<Login> {
           Align(
               alignment: Alignment.topLeft,
               child: Text(
-                ' Iniciar Sesion',
+                ' CALISTENIA CHILE',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 22,
@@ -152,7 +152,7 @@ class _Login extends State<Login> {
               );
             },
             elevation: 2.0,
-            fillColor: Colors.redAccent.withOpacity(0.3),
+            fillColor: Colors.orange[900],
             child: Text(
               'Entrenar',
               style: TextStyle(
@@ -169,7 +169,7 @@ class _Login extends State<Login> {
             ),
           ),
           SizedBox(
-            height: 5,
+            height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -246,4 +246,21 @@ class PasswordFieldContainer extends StatelessWidget {
       child: child,
     );
   }
+}
+
+Widget titulo(context) {
+  return Column(children: [
+    Align(
+      alignment: Alignment.center,
+      child: Container(
+        padding: EdgeInsets.all(30),
+        child: Text(
+          'CALISTENIA CHILE',
+          style: TextStyle(
+            fontSize: 20,
+          ),
+        ),
+      ),
+    ),
+  ]);
 }

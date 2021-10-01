@@ -1,7 +1,4 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Mapa extends StatefulWidget {
   Mapa({Key? key}) : super(key: key);
@@ -11,7 +8,7 @@ class Mapa extends StatefulWidget {
 }
 
 class _MapaState extends State<Mapa> {
-  Completer<GoogleMapController> _controller = Completer();
+  //Completer<GoogleMapController> _controller = Completer();
 
   @override
   void initState() {
@@ -23,19 +20,20 @@ class _MapaState extends State<Mapa> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text('Parques Cercanos'),
       ),
       body: Stack(
         children: <Widget>[
-          _buildGoogleMap(context),
-          _buildContainer(),
+          //  _buildGoogleMap(context),
+          //_buildContainer(),
         ],
       ),
     );
   }
 
-  Widget _buildContainer() {
+  /*Widget _buildContainer() {
     return Align(
       alignment: Alignment.bottomLeft,
       child: Container(
@@ -297,3 +295,5 @@ Marker newyork3Marker = Marker(
     BitmapDescriptor.hueViolet,
   ),
 );
+*/
+}

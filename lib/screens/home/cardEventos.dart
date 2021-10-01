@@ -1,15 +1,17 @@
 import 'dart:async';
-import 'package:calistenia_app/api/books_api.dart';
+import 'dart:convert';
 import 'package:calistenia_app/models/book.dart';
-import 'package:calistenia_app/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
-class FilterNetworkListPage extends StatefulWidget {
+class CardEventos extends StatefulWidget {
   @override
-  FilterNetworkListPageState createState() => FilterNetworkListPageState();
+  CardEventosState createState() => CardEventosState();
 }
 
-class FilterNetworkListPageState extends State<FilterNetworkListPage> {
+class CardEventosState extends State<CardEventos> {
+  late Future<Book> futureBook;
+
   List<Book> books = [];
   String query = '';
   Timer? debouncer;
@@ -17,8 +19,7 @@ class FilterNetworkListPageState extends State<FilterNetworkListPage> {
   @override
   void initState() {
     super.initState();
-
-    init();
+    futureBook = fetchEvento();
   }
 
   @override
@@ -38,17 +39,10 @@ class FilterNetworkListPageState extends State<FilterNetworkListPage> {
     debouncer = Timer(duration, callback);
   }
 
-  Future init() async {
-    final books = await BooksApi.getBooks(query);
-    setState(() => this.books = books);
-  }
-
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Colors.grey.shade900,
         body: Column(
           children: <Widget>[
-            buildSearch(),
             Expanded(
               child: ListView.builder(
                 itemCount: books.length,
@@ -62,23 +56,6 @@ class FilterNetworkListPageState extends State<FilterNetworkListPage> {
           ],
         ),
       );
-
-  Widget buildSearch() => SearchWidget(
-        text: query,
-        hintText: 'Title or Author Name',
-        onChanged: searchBook,
-      );
-
-  Future searchBook(String query) async => debounce(() async {
-        final books = await BooksApi.getBooks(query);
-
-        if (!mounted) return;
-
-        setState(() {
-          this.query = query;
-          this.books = books;
-        });
-      });
 
   Widget buildBook(Book book) => ListTile(
         leading: Image.network(
@@ -98,4 +75,19 @@ class FilterNetworkListPageState extends State<FilterNetworkListPage> {
           //debugPrint('id: $book.id');
         },*/
       );
+}
+
+Future<Book> fetchEvento() async {
+  final response = await http.get(Uri.parse(
+      'https://gist.githubusercontent.com/JohannesMilke/d53fbbe9a1b7e7ca2645db13b995dc6f/raw/eace0e20f86cdde3352b2d92f699b6e9dedd8c70/books.json'));
+
+  if (response.statusCode == 200) {
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
+    return Book.fromJson(jsonDecode(response.body));
+  } else {
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to load album');
+  }
 }

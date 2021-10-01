@@ -1,4 +1,4 @@
-class Eventos {
+class Evento {
   final int idevento;
   final String nombre;
   final String fecha;
@@ -6,7 +6,7 @@ class Eventos {
   final String descripcion;
   final int idinstructor;
 
-  const Eventos({
+  const Evento({
     required this.idevento,
     required this.nombre,
     required this.fecha,
@@ -15,7 +15,7 @@ class Eventos {
     required this.idinstructor,
   });
 
-  factory Eventos.fromJson(Map<String, dynamic> json) => Eventos(
+  factory Evento.fromJson(Map<String, dynamic> json) => Evento(
         idevento: json['idevento'],
         nombre: json['nombre'],
         fecha: json['fecha'],
