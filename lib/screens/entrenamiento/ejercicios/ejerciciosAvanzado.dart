@@ -1,4 +1,4 @@
-import 'package:calistenia_app/screens/entrenamiento/ejercicios/filter_network_list_page.dart';
+import 'package:calistenia_app/screens/entrenamiento/ejercicios/ejerciciosFacil.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +8,7 @@ class EjerciciosAvanzado extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.black,
         title: Text('Ejercicios avanzados'),
       ),
@@ -17,5 +18,5 @@ class EjerciciosAvanzado extends StatelessWidget {
 }
 
 Widget buildPages() {
-  return FilterNetworkListPage();
+  return EjerciciosFacil();
 }

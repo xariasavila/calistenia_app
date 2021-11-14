@@ -19,18 +19,13 @@ class _MapaState extends State<Mapa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: Text('Parques Cercanos'),
-      ),
-      body: Stack(
-        children: <Widget>[
-          //  _buildGoogleMap(context),
-          //_buildContainer(),
-        ],
-      ),
-    );
+        backgroundColor: Colors.grey.shade900,
+        appBar: AppBar(
+            shadowColor: Colors.deepOrange,
+            backgroundColor: Colors.black,
+            centerTitle: true,
+            automaticallyImplyLeading: false,
+            title: Text('MAPA')));
   }
 
   /*Widget _buildContainer() {

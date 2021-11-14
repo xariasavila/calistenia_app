@@ -1,8 +1,9 @@
-import 'package:calistenia_app/screens/account/cuenta.dart';
+import 'package:calistenia_app/screens/account/cuenta2.dart';
 import 'package:calistenia_app/screens/entrenamiento/entrenamiento.dart';
-import 'package:calistenia_app/screens/home/inicio.dart';
 import 'package:calistenia_app/screens/map/mapa.dart';
 import 'package:flutter/material.dart';
+
+import 'home/inicio.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
     Inicio(),
     Entrenamiento(),
     Mapa(),
-    Cuenta(),
+    Cuenta2(),
   ];
 
   @override
@@ -30,6 +31,7 @@ class _MainScreenState extends State<MainScreen> {
         iconSize: 22,
         selectedIconTheme: IconThemeData(color: Colors.orange[900]),
         selectedItemColor: Colors.white,
+        //showUnselectedLabels: false,
         currentIndex: pageIndex,
         onTap: (value) {
           setState(() {

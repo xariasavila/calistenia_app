@@ -1,10 +1,10 @@
 class Noticia {
   final int idnoticia;
   final String titulo;
-  final DateTime fecha;
+  final String fecha;
   final String descripcion;
 
-  const Noticia(
+  Noticia(
       {required this.idnoticia,
       required this.titulo,
       required this.fecha,

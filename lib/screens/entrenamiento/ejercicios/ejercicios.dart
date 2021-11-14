@@ -32,18 +32,19 @@ Widget columnaEjercicios(BuildContext context) {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
           margin: EdgeInsets.all(30),
-          elevation: 10,
+          elevation: 8,
           clipBehavior: Clip.hardEdge,
           child: ClipRRect(
               child: Column(
             children: <Widget>[
               Ink.image(
                   image: AssetImage('assets/images/eje1.jpg'),
-                  height: 200,
+                  height: 180,
                   //width: 200,
                   fit: BoxFit.cover,
                   child: InkWell(
                     onTap: () {
+                      Navigator.of(context).pop();
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -56,7 +57,8 @@ Widget columnaEjercicios(BuildContext context) {
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                   child: Text('Ejercicio fácil',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ))),
             ],
           ))),
@@ -67,13 +69,13 @@ Widget columnaEjercicios(BuildContext context) {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
           clipBehavior: Clip.hardEdge,
           margin: EdgeInsets.all(30),
-          elevation: 10,
+          elevation: 8,
           child: ClipRRect(
               child: Column(
             children: <Widget>[
               Ink.image(
                   image: AssetImage('assets/images/eje2.jpg'),
-                  height: 200,
+                  height: 180,
                   //width: 200,
                   fit: BoxFit.cover,
                   child: InkWell(
@@ -90,7 +92,8 @@ Widget columnaEjercicios(BuildContext context) {
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                   child: Text('Ejercicio intermedio',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ))),
             ],
           ))),
@@ -101,13 +104,13 @@ Widget columnaEjercicios(BuildContext context) {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           clipBehavior: Clip.hardEdge,
           margin: EdgeInsets.all(30),
-          elevation: 10,
+          elevation: 8,
           child: ClipRRect(
               child: Column(
             children: <Widget>[
               Ink.image(
                   image: AssetImage('assets/images/eje3.jpg'),
-                  height: 200,
+                  height: 180,
                   //width: 200,
                   fit: BoxFit.cover,
                   child: InkWell(
@@ -124,7 +127,8 @@ Widget columnaEjercicios(BuildContext context) {
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                   child: Text('Ejercicio avanzado',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ))),
             ],
           ))),
@@ -142,7 +146,7 @@ Widget titulo(BuildContext context) {
           'Selecciona la dificultad',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 25,
+            fontSize: 22,
           ),
         ),
       ),

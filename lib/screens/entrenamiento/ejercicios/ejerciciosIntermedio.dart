@@ -1,4 +1,4 @@
-import 'package:calistenia_app/screens/entrenamiento/ejercicios/filter_network_list_page.dart';
+import 'package:calistenia_app/controllers/filtroEjercicio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,13 +9,14 @@ class EjerciciosIntermedio extends StatelessWidget {
       backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('Ejercicios intermedios'),
+        centerTitle: true,
+        title: Text('EJERCICIOS FÁCILES'),
       ),
-      body: buildPages(),
+      body: bodyEjercicio(),
     );
   }
 }
 
-Widget buildPages() {
-  return FilterNetworkListPage();
+Widget bodyEjercicio() {
+  return FiltroEjercicio();
 }

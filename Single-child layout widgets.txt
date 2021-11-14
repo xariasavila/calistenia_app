@@ -68,3 +68,67 @@ A widget that uses the table layout algorithm for its children.
 
 Wrap
 A widget that displays its children in multiple horizontal or vertical runs.
+
+
+Alex Elias20:34
+https://api.flutter.dev/flutter/intl/DateFormat-class.html
+claudio castillo20:35
+https://stackoverflow.com/questions/16126579/how-do-i-format-a-date-with-dart
+Alex Elias20:36
+https://www.npmjs.com/package/react-bootstrap-date-picker
+Alex Elias20:38
+no no era ese
+este si https://ant.design/components/date-picker/
+claudio castillo20:45
+https://leafletjs.com/
+claudio castillo20:47
+https://pub.dev/packages/flutter_map
+
+
+
+
+Alex.
+- Agregar Historias de usuario a cada sprint.
+    https://docs.google.com/document/d/10mRNXTDYTZXEwjEEnJsUIhDPaNJLHlkZk9m1apQvyIg/edit
+- Modificar y corregir campo de hora en API Evento.
+- Revision de API Rutinas.
+-API NOTICIAS	Solo se mostrarán las noticias de los últimos 7 días.
+
+
+Xavi - Cris.
+- Agregar talla SML a cada historia de usuario.
+- Crear EDT.
+- Modificar Carta Gantt.
+
+Cris
+- Cargar datos en la API mediante postman. POST
+http://67.205.155.156:4500/api/noticia
+{
+        "nombre":"Presentacion nuevos alumnos",
+        "fecha":"2021-11-05",
+        "idinstructor":1,
+        "descripcion":" Daremos la bienvenida a los nuevos alumnos "
+}
+
+http://67.205.155.156:4500/api/evento
+
+http://67.205.155.156:4500/api/ejercicio
+{
+       "nombre": "Dominadas",
+        "descripcion": "Ejercicio para espalda",
+        "link": "https://www.youtube.com/watch?v=0yXB6CG4uLQ",
+        "iddificultad": 2
+}
+
+http://67.205.155.156:4500/api/rutina
+
+
+
+Xavi.
+- Formatear fecha en Noticias.
+- Buscar informacion sobre Mapa para la implementacion.
+- Averiguar funcionamiento de las rutas para crear la nueva ventana con el detalle de los ejercicios.
+
+
+
+

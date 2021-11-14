@@ -38,7 +38,7 @@ Widget cardRutinasFacil(BuildContext context) {
           children: <Widget>[
             Ink.image(
                 image: AssetImage('assets/images/rutina1.jpg'),
-                height: 200,
+                height: 180,
                 //width: 200,
                 fit: BoxFit.cover,
                 child: InkWell(
@@ -53,7 +53,8 @@ Widget cardRutinasFacil(BuildContext context) {
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: Text('Rutina Fácil',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   )),
             ),
           ],
@@ -74,7 +75,7 @@ Widget cardRutinasIntermedio(BuildContext context) {
           children: <Widget>[
             Ink.image(
                 image: AssetImage('assets/images/rutina2.jpg'),
-                height: 200,
+                height: 180,
                 //width: 200,
                 fit: BoxFit.cover,
                 child: InkWell(
@@ -90,7 +91,7 @@ Widget cardRutinasIntermedio(BuildContext context) {
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: Text(
                 'Rutina Intermedia',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -111,7 +112,7 @@ Widget cardRutinasAvanzado(BuildContext context) {
           children: <Widget>[
             Ink.image(
                 image: AssetImage('assets/images/rutina3.jpg'),
-                height: 200,
+                height: 180,
                 //width: 200,
                 fit: BoxFit.cover,
                 child: InkWell(
@@ -126,7 +127,8 @@ Widget cardRutinasAvanzado(BuildContext context) {
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: Text('Rutina Avanzada',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   )),
             ),
           ],
@@ -144,7 +146,7 @@ Widget titulo(BuildContext context) {
           'Selecciona la dificultad',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 25,
+            fontSize: 22,
           ),
         ),
       ),

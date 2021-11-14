@@ -72,7 +72,7 @@ class _Login extends State<Login> {
                     fontFamily: 'Ubuntu'),
               )),
           SizedBox(
-            height: 5,
+            height: 30,
           ),
           TextFieldContainer(
             child: TextField(
@@ -158,7 +158,7 @@ class _Login extends State<Login> {
               style: TextStyle(
                   color: Colors.white,
                   letterSpacing: 2.6,
-                  fontSize: 18,
+                  fontSize: 25,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'Ubuntu'),
             ),
@@ -249,11 +249,10 @@ class PasswordFieldContainer extends StatelessWidget {
 }
 
 Widget titulo(context) {
-  return Column(children: [
+  return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
     Align(
       alignment: Alignment.center,
       child: Container(
-        padding: EdgeInsets.all(30),
         child: Text(
           'CALISTENIA CHILE',
           style: TextStyle(

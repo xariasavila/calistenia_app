@@ -1,0 +1,110 @@
+import 'dart:async';
+import 'package:calistenia_app/api/calistenia_api.dart';
+import 'package:calistenia_app/controllers/detalleEjercicio.dart';
+import 'package:calistenia_app/models/ejercicio.dart';
+import 'package:calistenia_app/widgets/search_widget.dart';
+import 'package:flutter/material.dart';
+
+class FiltroEjercicio extends StatefulWidget {
+  @override
+  FiltroEjercicioState createState() => FiltroEjercicioState();
+}
+
+class FiltroEjercicioState extends State<FiltroEjercicio> {
+  Timer? debouncer;
+  List<Ejercicio> ejercicios = [];
+  String query = '';
+
+  @override
+  void dispose() {
+    debouncer?.cancel();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    init();
+  }
+
+  void debounce(
+    VoidCallback callback, {
+    Duration duration = const Duration(milliseconds: 1000),
+  }) {
+    if (debouncer != null) {
+      debouncer!.cancel();
+    }
+
+    debouncer = Timer(duration, callback);
+  }
+
+  Future init() async {
+    final ejercicios = await CalisteniaApi.getEjercicios(query);
+    setState(() => this.ejercicios = ejercicios);
+  }
+
+  Widget buildSearch() => SearchWidget(
+        text: query,
+        hintText: 'Nombre del ejercicio',
+        onChanged: searchEjercicio,
+      );
+
+  Future searchEjercicio(String query) async => debounce(() async {
+        final ejercicios = await CalisteniaApi.getEjercicios(query);
+
+        if (!mounted) return;
+
+        setState(() {
+          this.query = query;
+          this.ejercicios = ejercicios;
+        });
+      });
+
+  Widget buildEjercicio(Ejercicio ejercicio) => Column(children: [
+        Card(
+          margin: EdgeInsets.all(8),
+          child: ListTile(
+            leading: Icon(
+              Icons.accessibility,
+              color: Colors.orange,
+              size: 24.0,
+            ),
+            title: Text(ejercicio.nombre),
+            //subtitle: Text(ejercicio.descripcion),
+            trailing: Icon(
+              Icons.arrow_forward,
+              color: Colors.orange,
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        DetalleEjercicio(ejercicio.idejercicio)),
+              );
+            },
+          ),
+        )
+      ]);
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        backgroundColor: Colors.grey.shade900,
+        body: Column(
+          children: <Widget>[
+            buildSearch(),
+            Expanded(
+              child: ListView.builder(
+                itemCount: ejercicios.length,
+                itemBuilder: (context, index) {
+                  final ejercicio = ejercicios[index];
+
+                  return buildEjercicio(ejercicio);
+                },
+              ),
+            ),
+          ],
+        ),
+      );
+}
