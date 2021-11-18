@@ -1,6 +1,6 @@
-import 'package:calistenia_app/screens/entrenamiento/rutinas/rutinas.dart';
 import 'package:flutter/material.dart';
 import 'ejercicios/ejercicios.dart';
+import 'rutinas/rutinas.dart';
 
 class Entrenamiento extends StatelessWidget {
   @override

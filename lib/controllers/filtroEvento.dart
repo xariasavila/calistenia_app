@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:calistenia_app/api/calistenia_api.dart';
-import 'package:calistenia_app/models/ejercicio.dart';
+import 'package:calistenia_app/models/evento.dart';
 import 'package:flutter/material.dart';
 
 class FiltroEvento extends StatefulWidget {
@@ -10,7 +10,7 @@ class FiltroEvento extends StatefulWidget {
 
 class FiltroEventoState extends State<FiltroEvento> {
   Timer? debouncer;
-  List<Ejercicio> ejercicios = [];
+  List<Evento> eventos = [];
   String query = '';
 
   @override
@@ -38,35 +38,37 @@ class FiltroEventoState extends State<FiltroEvento> {
   }
 
   Future init() async {
-    final ejercicios = await CalisteniaApi.getEjercicios(query);
-    setState(() => this.ejercicios = ejercicios);
+    final eventos = await CalisteniaApi.getEventos(query);
+    setState(() => this.eventos = eventos);
   }
 
-  Widget buildEvento(Ejercicio ejercicio) => Column(children: [
+  Widget buildEvento(Evento evento) => Column(children: [
         Card(
             elevation: 5,
-            margin: EdgeInsets.all(8),
+            margin: EdgeInsets.all(10),
             shape: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: Colors.black)),
             child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-              ListTile(
-                leading: CircleAvatar(
-                    radius: 20,
-                    backgroundImage: AssetImage("assets/images/calendar.png")),
-                title: Text(
-                  ejercicio.nombre,
-                  //textAlign: TextAlign.center,
-                ),
-                //  subtitle: Text(ejercicio.descripcion),
-              ),
+              Container(
+                  padding: EdgeInsets.all(8.0),
+                  child: ListTile(
+                      leading: CircleAvatar(
+                          radius: 22,
+                          backgroundImage:
+                              AssetImage("assets/images/calendar.png")),
+                      title: Text(evento.nombre,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold)))),
               Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  ejercicio.descripcion,
-                  style: TextStyle(color: Colors.orange),
-                ),
-              ),
+                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text(evento.descripcion,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.orange,
+                        fontSize: 15,
+                      ))),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -93,11 +95,11 @@ class FiltroEventoState extends State<FiltroEvento> {
           children: <Widget>[
             Expanded(
               child: ListView.builder(
-                itemCount: ejercicios.length,
+                itemCount: eventos.length,
                 itemBuilder: (context, index) {
-                  final ejercicio = ejercicios[index];
+                  final evento = eventos[index];
 
-                  return buildEvento(ejercicio);
+                  return buildEvento(evento);
                 },
               ),
             ),

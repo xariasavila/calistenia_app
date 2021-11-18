@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:calistenia_app/api/calistenia_api.dart';
 import 'package:calistenia_app/models/noticia.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class FiltroNoticia extends StatefulWidget {
   @override
@@ -43,7 +42,7 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
     setState(() => this.noticias = noticias);
   }
 
-  Widget buildEvento(Noticia noticia) => Column(children: [
+  Widget buildNoticia(Noticia noticia) => Column(children: [
         Card(
             elevation: 5,
             margin: EdgeInsets.all(10),
@@ -69,7 +68,6 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
                     child: Text(noticia.descripcion,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: 'Roboto',
                           color: Colors.orange,
                           fontSize: 15,
                         ))),
@@ -94,11 +92,6 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
                           height: 30,
                           child: Text(noticia.fecha,
                               overflow: TextOverflow.clip,
-                              //Text(DateFormat('yyyy/MM/dd', yMd() ).format(noticia.fecha),
-                              // Text(DateFormat('yMMMMd').format(noticia.fecha),
-                              // Text( DateFormat(DateFormat.YEAR_MONTH_DAY, 'pt_Br').format(noticia.fecha).toString(),
-                              //   Text(DateFormat(yMMMd().format(noticia.fecha)),
-                              // Text(NumberFormat('###.0##', 'en_US').format(noticia.fecha),
                               textAlign: TextAlign.left,
                               style: TextStyle(fontSize: 13)))
                     ]),
@@ -117,7 +110,7 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
                 itemBuilder: (context, index) {
                   final noticia = noticias[index];
 
-                  return buildEvento(noticia);
+                  return buildNoticia(noticia);
                 },
               ),
             ),

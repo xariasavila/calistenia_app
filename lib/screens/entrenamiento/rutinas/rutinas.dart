@@ -1,7 +1,7 @@
-import 'package:calistenia_app/screens/entrenamiento/rutinas/rutinasDificil.dart';
-import 'package:calistenia_app/screens/entrenamiento/rutinas/rutinasFacil.dart';
-import 'package:calistenia_app/screens/entrenamiento/rutinas/rutinasIntermedio.dart';
 import 'package:flutter/material.dart';
+import 'rutinasFacil.dart';
+import 'rutinasIntermedio.dart';
+import 'rutinasAvanzado.dart';
 
 class Rutinas extends StatelessWidget {
   @override
@@ -10,8 +10,9 @@ class Rutinas extends StatelessWidget {
         backgroundColor: Colors.grey.shade900,
         appBar: AppBar(
           backgroundColor: Colors.black,
+          shadowColor: Colors.deepOrange,
           centerTitle: true,
-          title: Text('Nivel Rutinas'),
+          title: Text('NIVEL RUTINAS'),
         ),
         body: ListView(
           //padding: EdgeInsets.all(6.0),
@@ -51,9 +52,9 @@ Widget cardRutinasFacil(BuildContext context) {
                 )),
             Container(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-              child: Text('Rutina Fácil',
+              child: Text('RUTINA FÁCIL',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   )),
             ),
@@ -90,8 +91,8 @@ Widget cardRutinasIntermedio(BuildContext context) {
             Container(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: Text(
-                'Rutina Intermedia',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                'RUTINA INTERMEDIA',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -119,15 +120,16 @@ Widget cardRutinasAvanzado(BuildContext context) {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => RutinasDificil()),
+                      MaterialPageRoute(
+                          builder: (context) => RutinasAvanzado()),
                     );
                   },
                 )),
             Container(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-              child: Text('Rutina Avanzada',
+              child: Text('RUTINA AVANZADA',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   )),
             ),

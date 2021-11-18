@@ -10,8 +10,9 @@ class Ejercicios extends StatelessWidget {
         backgroundColor: Colors.grey.shade900,
         appBar: AppBar(
           backgroundColor: Colors.black,
+          shadowColor: Colors.deepOrange,
           centerTitle: true,
-          title: Text('Nivel Ejercicio'),
+          title: Text('NIVEL EJERCICIOS'),
         ),
         body: ListView(
           children: <Widget>[
@@ -55,9 +56,9 @@ Widget columnaEjercicios(BuildContext context) {
               Container(
                   padding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                  child: Text('Ejercicio fácil',
+                  child: Text('EJERCICIO FÁCIL',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ))),
             ],
@@ -90,9 +91,9 @@ Widget columnaEjercicios(BuildContext context) {
               Container(
                   padding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                  child: Text('Ejercicio intermedio',
+                  child: Text('EJERCICIO INTERMEDIO',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ))),
             ],
@@ -125,9 +126,9 @@ Widget columnaEjercicios(BuildContext context) {
               Container(
                   padding:
                       EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                  child: Text('Ejercicio avanzado',
+                  child: Text('EJERCICIO AVANZADO',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ))),
             ],

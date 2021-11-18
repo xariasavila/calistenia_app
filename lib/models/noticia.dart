@@ -11,10 +11,10 @@ class Noticia {
       required this.descripcion});
 
   factory Noticia.fromJson(Map<String, dynamic> json) => Noticia(
-      idnoticia: json['idnoticia'],
-      titulo: json['titulo'],
-      fecha: json['fecha'],
-      descripcion: json['descripcion']);
+      idnoticia: json['idnoticia'] as int,
+      titulo: json['titulo'] as String,
+      fecha: json['fecha'] as String,
+      descripcion: json['descripcion'] as String);
 
   Map<String, dynamic> toJson() => {
         'idnoticia': idnoticia,

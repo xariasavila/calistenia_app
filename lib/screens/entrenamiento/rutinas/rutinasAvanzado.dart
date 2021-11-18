@@ -1,37 +1,37 @@
 import 'dart:async';
 import 'package:calistenia_app/api/calistenia_api.dart';
 import 'package:calistenia_app/models/ejercicio.dart';
+import 'package:calistenia_app/screens/entrenamiento/rutinas/detallerUTINA.dart';
 import 'package:calistenia_app/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'detalleEjercicio.dart';
-
-class EjerciciosAvanzado extends StatelessWidget {
+class RutinasAvanzado extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
-        centerTitle: true,
         backgroundColor: Colors.black,
-        title: Text('EJERCICIOS AVANZADOS'),
+        shadowColor: Colors.deepOrange,
+        centerTitle: true,
+        title: Text('RUTINAS AVANZADAS'),
       ),
-      body: buildPages(),
+      body: bodyEjercicio(),
     );
   }
 }
 
-Widget buildPages() {
-  return FiltroEjercicio3();
+Widget bodyEjercicio() {
+  return FiltroEjercicio1();
 }
 
-class FiltroEjercicio3 extends StatefulWidget {
+class FiltroEjercicio1 extends StatefulWidget {
   @override
-  FiltroEjercicio3State createState() => FiltroEjercicio3State();
+  FiltroEjercicio1State createState() => FiltroEjercicio1State();
 }
 
-class FiltroEjercicio3State extends State<FiltroEjercicio3> {
+class FiltroEjercicio1State extends State<FiltroEjercicio1> {
   Timer? debouncer;
   List<Ejercicio> ejercicios = [];
   String query = '';
@@ -61,18 +61,18 @@ class FiltroEjercicio3State extends State<FiltroEjercicio3> {
   }
 
   Future init() async {
-    final ejercicios = await CalisteniaApi.getEjercicios3(query);
+    final ejercicios = await CalisteniaApi.getEjercicios1(query);
     setState(() => this.ejercicios = ejercicios);
   }
 
   Widget buildSearch() => SearchWidget(
         text: query,
-        hintText: 'Nombre del ejercicio',
+        hintText: 'Nombre de la rutina',
         onChanged: searchEjercicio,
       );
 
   Future searchEjercicio(String query) async => debounce(() async {
-        final ejercicios = await CalisteniaApi.getEjercicios3(query);
+        final ejercicios = await CalisteniaApi.getEjercicios1(query);
 
         if (!mounted) return;
 
@@ -92,7 +92,6 @@ class FiltroEjercicio3State extends State<FiltroEjercicio3> {
                 itemCount: ejercicios.length,
                 itemBuilder: (context, index) {
                   final ejercicio = ejercicios[index];
-
                   return buildEjercicio(ejercicio);
                 },
               ),
@@ -120,7 +119,7 @@ class FiltroEjercicio3State extends State<FiltroEjercicio3> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => DetalleEjercicio(ejercicio)));
+                        builder: (context) => DetalleRutina(ejercicio)));
               },
             ))
       ]);

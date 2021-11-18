@@ -1,13 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-//import 'package:path_provider/path_provider.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Cuenta2 extends StatefulWidget {
-  Cuenta2({Key? key}) : super(key: key);
-
   @override
   _Cuenta2State createState() => _Cuenta2State();
 }
@@ -15,48 +12,44 @@ class Cuenta2 extends StatefulWidget {
 class _Cuenta2State extends State<Cuenta2> {
   String nombreUsuario = 'Xaviera Arias';
   bool _isHidden = true;
-  final ImagePicker _picker = ImagePicker();
   File? image;
-  String? _imagepath;
+  final picker = ImagePicker();
 
-  void initState() {
-    super.initState();
-    loadImage(context);
+  Future abrirCamara(BuildContext context) async {
+    final image = await ImagePicker()
+        .pickImage(source: ImageSource.camera, maxWidth: 400, imageQuality: 50);
+
+    if (image == null) return;
+
+    final imagePermanent = await saveImagePermanently(image.path);
+    setState(() => this.image = imagePermanent);
+
+    Navigator.of(context).pop();
   }
 
-  /*Future<File> saveImagePermanently(String imagePath) async {
+  Future abrirGaleria(BuildContext context) async {
+    final image = await ImagePicker().pickImage(
+        source: ImageSource.gallery, maxWidth: 400, imageQuality: 50);
+
+    if (image == null) return;
+
+    final imagePermanent = await saveImagePermanently(image.path);
+    setState(() => this.image = imagePermanent);
+    Navigator.of(context).pop();
+  }
+
+  cancelar(BuildContext context) async {
+    Navigator.of(context).pop();
+  }
+
+  Future<File> saveImagePermanently(String imagePath) async {
     final directory = await getApplicationDocumentsDirectory();
-
     final name = basename(imagePath);
+    final imageFile = File('${directory.path}/$name');
 
-    final image = File("${directory.path}/$name");
-
-    return File(imagePath).copy(image.path);
-  }
-*/
-  /* Future<String> getFilePath() async {
-    Directory appDocumentsDirectory =
-        await getApplicationDocumentsDirectory(); // 1
-    String appDocumentsPath = appDocumentsDirectory.path; // 2
-    String filePath = '$appDocumentsPath/demoTextFile.txt'; // 3
-
-    return filePath;
+    return File(imagePath).copy(imageFile.path);
   }
 
-  void saveFile(BuildContext context) async {
-    File image = File(await getFilePath()); // 1
-    image.writeAsString(
-        "This is my demo text that will be saved to : demoTextFile.txt"); // 2
-  }
-
-  void readFile() async {
-    File image = File(await getFilePath()); // 1
-    String fileContent = await image.readAsString(); // 2
-
-    print('File Content: $fileContent');
-  }
-
-*/
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
@@ -147,7 +140,6 @@ class _Cuenta2State extends State<Cuenta2> {
         style: ElevatedButton.styleFrom(primary: Colors.orange),
         child: Text('Guardar', style: TextStyle(fontSize: 20)),
         onPressed: () {
-          saveImage(_imagepath);
           //  _actualizaController.clear();
           // _confirmaController.clear();
         },
@@ -156,21 +148,16 @@ class _Cuenta2State extends State<Cuenta2> {
   }
 
   Widget avatar(BuildContext context) {
-    // if (image == null) {
     return Center(
         child: Stack(children: <Widget>[
       image != null
           ? CircleAvatar(
               backgroundImage: FileImage(File(image!.path)),
-
-              //         backgroundImage: FileImage(File(_imagepath.toString())),
               radius: 80,
             )
           : CircleAvatar(
               radius: 80,
-              backgroundImage: AssetImage("assets/images/rutinas.jpg")
-              // :FileImage(File(image!.path))
-              ),
+              backgroundImage: AssetImage("assets/images/rutinas.jpg")),
       Positioned(
           bottom: 20.0,
           right: 20.0,
@@ -223,59 +210,17 @@ class _Cuenta2State extends State<Cuenta2> {
               },
               label: Text("Galeria"),
             ),
+            TextButton.icon(
+              icon: Icon(Icons.exit_to_app),
+              onPressed: () {
+                cancelar(context);
+              },
+              label: Text("Cancelar"),
+            ),
           ])
         ],
       ),
     );
-  }
-
-  void abrirCamara(BuildContext context) async {
-    final selectImageCamera =
-        await _picker.pickImage(source: ImageSource.camera);
-
-    print(selectImageCamera!.path.toString());
-
-    setState(() {
-      image = File(selectImageCamera.path);
-    });
-
-    Navigator.of(context).pop();
-  }
-
-  void abrirGaleria(BuildContext context) async {
-    final selectImageGallery =
-        await _picker.pickImage(source: ImageSource.gallery);
-
-    print(selectImageGallery!.path.toString());
-
-    setState(() {
-      image = File(selectImageGallery.path);
-      _imagepath = selectImageGallery.path;
-    });
-
-    Navigator.of(context).pop();
-  }
-
-  /* void abrirGaleria(BuildContext context) async {
-    final XFile? selectImage =
-        await _picker.pickImage(source: ImageSource.gallery);
-    print(selectImage!.path.toString());
-    setState(() {
-      image = selectImage;
-    });
-    Navigator.of(context).pop();
-  }
-*/
-  void saveImage(path) async {
-    SharedPreferences saveimage = await SharedPreferences.getInstance();
-    saveimage.setString("imagePath", path);
-  }
-
-  void loadImage(path) async {
-    SharedPreferences saveimage = await SharedPreferences.getInstance();
-    setState(() {
-      _imagepath = saveimage.getString("imagePath");
-    });
   }
 
   void _togglePasswordView() {

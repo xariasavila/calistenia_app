@@ -5,7 +5,7 @@ class Ejercicio {
   final String link;
   final int iddificultad;
 
-  const Ejercicio({
+  Ejercicio({
     required this.idejercicio,
     required this.nombre,
     required this.descripcion,
@@ -20,12 +20,4 @@ class Ejercicio {
         link: json['link'],
         iddificultad: json['iddificultad'],
       );
-
-  Map<String, dynamic> toJson() => {
-        'idejercicio': idejercicio,
-        'nombre': nombre,
-        'descripcion': descripcion,
-        'link': link,
-        'iddificultad': iddificultad,
-      };
 }
