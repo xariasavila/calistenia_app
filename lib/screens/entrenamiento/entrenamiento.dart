@@ -14,94 +14,98 @@ class Entrenamiento extends StatelessWidget {
           automaticallyImplyLeading: false,
           title: Text('ENTRENAMIENTO'),
         ),
-        body: Column(
-          children: <Widget>[
-            Align(
-              alignment: Alignment.center,
-              child: Container(
-                padding: EdgeInsets.all(20),
-                child: Text(
-                  'Selecciona un tipo de entrenamiento',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
+        body: Center(
+            child: ListView(children: <Widget>[
+          Column(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  child: Text(
+                    'Selecciona un tipo de entrenamiento',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Card(
-              // CARD EJERCI
-              color: Colors.orange,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50)),
-              clipBehavior: Clip.hardEdge,
-              margin: EdgeInsets.all(20),
-              elevation: 8,
-              child: ClipRRect(
-                  child: Column(
-                children: <Widget>[
-                  Ink.image(
-                    height: 180,
-                    fit: BoxFit.cover,
-                    image: AssetImage('assets/images/ejercicio.jpg'),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Ejercicios()),
-                        );
-                      },
+              Card(
+                // CARD EJERCI
+                color: Colors.orange,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50)),
+                clipBehavior: Clip.hardEdge,
+                margin: EdgeInsets.all(20),
+                elevation: 8,
+                child: ClipRRect(
+                    child: Column(
+                  children: <Widget>[
+                    Ink.image(
+                      height: 180,
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/images/ejercicio.jpg'),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Ejercicios()),
+                          );
+                        },
+                      ),
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: Text('Ejercicios',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        )),
-                  ),
-                ],
-              )),
-            ),
-            Card(
-              // card rutinas
-              color: Colors.orange,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50)),
-              clipBehavior: Clip.hardEdge,
-              margin: EdgeInsets.all(20),
-              elevation: 8,
-              child: ClipRRect(
-                  child: Column(
-                children: <Widget>[
-                  Ink.image(
-                    height: 180,
-                    fit: BoxFit.cover,
-                    image: AssetImage('assets/images/rutina.jpg'),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Rutinas()),
-                        );
-                      },
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Text('Ejercicios',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          )),
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: Text('Rutinas',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        )),
-                  ),
-                ],
-              )),
-            ),
-          ],
-        ));
+                  ],
+                )),
+              ),
+              Card(
+                // card rutinas
+                color: Colors.orange,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50)),
+                clipBehavior: Clip.hardEdge,
+                margin: EdgeInsets.all(20),
+                elevation: 8,
+                child: ClipRRect(
+                    child: Column(
+                  children: <Widget>[
+                    Ink.image(
+                      height: 180,
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/images/rutina.jpg'),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Rutinas()),
+                          );
+                        },
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Text('Rutinas',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ),
+                  ],
+                )),
+              ),
+            ],
+          )
+        ])));
   }
 }
 

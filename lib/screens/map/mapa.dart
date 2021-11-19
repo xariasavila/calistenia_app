@@ -37,7 +37,7 @@ class _MapaState extends State<Mapa> {
                   'accessToken': map_key,
                   'id': 'mapbox.mapbox-streets-v8'
                 }),
-            /*  MarkerLayerOptions(
+            MarkerLayerOptions(
               markers: [
                 Marker(
                     width: 80.0,
@@ -53,13 +53,13 @@ class _MapaState extends State<Mapa> {
                                   context: context,
                                   builder: (builder) {
                                     return Container(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         child: new Center(
-                                            child: new Text("mierda")));
+                                            child: new Text("prueba")));
                                   });
                             })))
               ],
-            ),*/
+            ),
           ],
         ));
   }

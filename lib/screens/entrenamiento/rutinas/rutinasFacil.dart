@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:calistenia_app/api/calistenia_api.dart';
 import 'package:calistenia_app/models/ejercicio.dart';
-import 'package:calistenia_app/screens/entrenamiento/rutinas/detallerUTINA.dart';
+import 'package:calistenia_app/screens/entrenamiento/ejercicios/detalleEjercicio.dart';
 import 'package:calistenia_app/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -119,7 +119,7 @@ class FiltroEjercicio1State extends State<FiltroEjercicio1> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => DetalleRutina(ejercicio)));
+                        builder: (context) => DetalleEjercicio(ejercicio)));
               },
             ))
       ]);

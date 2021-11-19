@@ -120,6 +120,7 @@ class FiltroEjercicio1State extends State<FiltroEjercicio1> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => DetalleEjercicio(ejercicio)));
+                //   builder: (context) => Hola()));
               },
             ))
       ]);

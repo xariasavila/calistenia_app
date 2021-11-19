@@ -2,7 +2,7 @@ import 'package:calistenia_app/screens/account/cuenta2.dart';
 import 'package:calistenia_app/screens/entrenamiento/entrenamiento.dart';
 import 'package:calistenia_app/screens/map/mapa.dart';
 import 'package:flutter/material.dart';
-import 'home/inicio.dart';
+import 'inicio.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({Key? key}) : super(key: key);

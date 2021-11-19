@@ -5,8 +5,6 @@ import 'package:calistenia_app/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'detalleEjercicio.dart';
-
 class EjerciciosAvanzado extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -116,12 +114,6 @@ class FiltroEjercicio3State extends State<FiltroEjercicio3> {
                 Icons.arrow_forward,
                 color: Colors.orange,
               ),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => DetalleEjercicio(ejercicio)));
-              },
             ))
       ]);
 }

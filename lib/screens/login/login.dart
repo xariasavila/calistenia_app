@@ -171,7 +171,7 @@ class _Login extends State<Login> {
           SizedBox(
             height: 20,
           ),
-          Row(
+          /*   Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -182,7 +182,7 @@ class _Login extends State<Login> {
                     fontFamily: 'Ubuntu'),
               ),
             ],
-          ),
+          ),*/
           SizedBox(
             height: 10,
           ),

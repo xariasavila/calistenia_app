@@ -13,7 +13,7 @@ class DetalleRutina extends StatelessWidget {
         appBar: AppBar(
             backgroundColor: Colors.black,
             centerTitle: true,
-            title: Text("DETALLE EJERCICIO")),
+            title: Text("DETALLE RUTINA")),
         body: Column(children: [
           Card(
               color: Colors.green,
@@ -24,11 +24,12 @@ class DetalleRutina extends StatelessWidget {
               clipBehavior: Clip.hardEdge,
               child: ClipRRect(
                   child: Column(children: <Widget>[
-                Ink.image(
-                    image: AssetImage('assets/images/eje1.jpg'),
-                    height: 180,
-                    //width: 200,
-                    fit: BoxFit.cover),
+                /*AspectRatio(
+                    aspectRatio: 16 / 9,
+                    child: BetterPlayer.network(
+                        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                        betterPlayerConfiguration:
+                            BetterPlayerConfiguration(aspectRatio: 16 / 9)))*/
               ]))),
           Row(children: <Widget>[
             Container(

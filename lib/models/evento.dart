@@ -2,7 +2,7 @@ class Evento {
   final int idevento;
   final String nombre;
   final String fecha;
-  final String hora;
+  //final String hora;
   final String descripcion;
   final int idinstructor;
 
@@ -10,7 +10,7 @@ class Evento {
     required this.idevento,
     required this.nombre,
     required this.fecha,
-    required this.hora,
+    //required this.hora,
     required this.descripcion,
     required this.idinstructor,
   });
@@ -19,7 +19,7 @@ class Evento {
         idevento: json['idevento'],
         nombre: json['nombre'],
         fecha: json['fecha'],
-        hora: json['hora'],
+        // hora: json['hora'],
         descripcion: json['descripcion'],
         idinstructor: json['idinstructor'],
       );
@@ -28,7 +28,7 @@ class Evento {
         'idevento': idevento,
         'nombre': nombre,
         'fecha': fecha,
-        'hora': hora,
+        //'hora': hora,
         'descripcion': descripcion,
         'idinstructor': idinstructor,
       };
