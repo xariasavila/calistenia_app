@@ -1,5 +1,5 @@
-import 'package:calistenia_app/screens/home/Noticias/noticias.dart';
-import 'package:calistenia_app/screens/home/Eventos/eventos.dart';
+import 'package:calistenia_app/screens/home/noticias.dart';
+import 'package:calistenia_app/screens/home/eventos.dart';
 
 import 'package:flutter/material.dart';
 

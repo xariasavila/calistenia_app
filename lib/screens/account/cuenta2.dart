@@ -140,6 +140,7 @@ class _Cuenta2State extends State<Cuenta2> {
         style: ElevatedButton.styleFrom(primary: Colors.orange),
         child: Text('Guardar', style: TextStyle(fontSize: 20)),
         onPressed: () {
+          saveImagePermanently("imagePath");
           //  _actualizaController.clear();
           // _confirmaController.clear();
         },

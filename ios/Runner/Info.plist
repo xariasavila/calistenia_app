@@ -46,6 +46,9 @@
 	<string>to take user profile image</string>
 	<key>NSCameraUsageDescription</key>
 	<string>to choose user profile image</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+<string>This app needs access to location when open.</string>
+
 
 </dict>
 </plist>
