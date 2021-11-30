@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'package:calistenia_app/api/calistenia_api.dart';
-import 'package:calistenia_app/models/ejercicio.dart';
-import 'package:calistenia_app/screens/entrenamiento/rutinas/detallerUTINA.dart';
+import 'package:calistenia_app/models/rutina.dart';
 import 'package:calistenia_app/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+
+import 'detalleRutina.dart';
 
 class RutinasIntermedio extends StatelessWidget {
   @override
@@ -17,23 +18,23 @@ class RutinasIntermedio extends StatelessWidget {
         centerTitle: true,
         title: Text('RUTINAS INTERMEDIAS'),
       ),
-      body: bodyEjercicio(),
+      body: bodyRutina(),
     );
   }
 }
 
-Widget bodyEjercicio() {
-  return FiltroEjercicio1();
+Widget bodyRutina() {
+  return FiltroRutina2();
 }
 
-class FiltroEjercicio1 extends StatefulWidget {
+class FiltroRutina2 extends StatefulWidget {
   @override
-  FiltroEjercicio1State createState() => FiltroEjercicio1State();
+  FiltroRutina2State createState() => FiltroRutina2State();
 }
 
-class FiltroEjercicio1State extends State<FiltroEjercicio1> {
+class FiltroRutina2State extends State<FiltroRutina2> {
   Timer? debouncer;
-  List<Ejercicio> ejercicios = [];
+  List<Rutina> rutinas = [];
   String query = '';
 
   @override
@@ -61,24 +62,24 @@ class FiltroEjercicio1State extends State<FiltroEjercicio1> {
   }
 
   Future init() async {
-    final ejercicios = await CalisteniaApi.getEjercicios1(query);
-    setState(() => this.ejercicios = ejercicios);
+    final rutinas = await CalisteniaApi.getRutinas2(query);
+    setState(() => this.rutinas = rutinas);
   }
 
   Widget buildSearch() => SearchWidget(
         text: query,
         hintText: 'Nombre de la rutina',
-        onChanged: searchEjercicio,
+        onChanged: searchRutina,
       );
 
-  Future searchEjercicio(String query) async => debounce(() async {
-        final ejercicios = await CalisteniaApi.getEjercicios1(query);
+  Future searchRutina(String query) async => debounce(() async {
+        final rutinas = await CalisteniaApi.getRutinas2(query);
 
         if (!mounted) return;
 
         setState(() {
           this.query = query;
-          this.ejercicios = ejercicios;
+          this.rutinas = rutinas;
         });
       });
 
@@ -89,10 +90,10 @@ class FiltroEjercicio1State extends State<FiltroEjercicio1> {
             buildSearch(),
             Expanded(
               child: ListView.builder(
-                itemCount: ejercicios.length,
+                itemCount: rutinas.length,
                 itemBuilder: (context, index) {
-                  final ejercicio = ejercicios[index];
-                  return buildEjercicio(ejercicio);
+                  final rutina = rutinas[index];
+                  return buildRutina(rutina);
                 },
               ),
             ),
@@ -100,7 +101,7 @@ class FiltroEjercicio1State extends State<FiltroEjercicio1> {
         ),
       );
 
-  Widget buildEjercicio(Ejercicio ejercicio) => Column(children: [
+  Widget buildRutina(Rutina rutina) => Column(children: [
         Card(
             margin: EdgeInsets.all(8),
             child: ListTile(
@@ -109,7 +110,7 @@ class FiltroEjercicio1State extends State<FiltroEjercicio1> {
                 color: Colors.orange,
                 size: 24.0,
               ),
-              title: Text(ejercicio.nombre),
+              title: Text(rutina.nombre),
               //subtitle: Text(ejercicio.descripcion),
               trailing: Icon(
                 Icons.arrow_forward,
@@ -119,7 +120,7 @@ class FiltroEjercicio1State extends State<FiltroEjercicio1> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => DetalleRutina(ejercicio)));
+                        builder: (context) => DetalleRutina(rutina)));
               },
             ))
       ]);

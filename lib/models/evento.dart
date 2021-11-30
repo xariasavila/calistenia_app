@@ -10,7 +10,6 @@ class Evento {
     required this.idevento,
     required this.nombre,
     required this.fecha,
-    //required this.hora,
     required this.descripcion,
     required this.idinstructor,
   });
@@ -19,7 +18,6 @@ class Evento {
         idevento: json['idevento'],
         nombre: json['nombre'],
         fecha: json['fecha'],
-        // hora: json['hora'],
         descripcion: json['descripcion'],
         idinstructor: json['idinstructor'],
       );
@@ -28,7 +26,6 @@ class Evento {
         'idevento': idevento,
         'nombre': nombre,
         'fecha': fecha,
-        //'hora': hora,
         'descripcion': descripcion,
         'idinstructor': idinstructor,
       };

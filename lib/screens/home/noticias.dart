@@ -3,6 +3,7 @@ import 'package:calistenia_app/api/calistenia_api.dart';
 import 'package:calistenia_app/models/noticia.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:linkwell/linkwell.dart';
 
 class Noticias extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class Noticias extends StatelessWidget {
         shadowColor: Colors.deepOrange,
         backgroundColor: Colors.black,
         centerTitle: true,
-        title: Text('NOTICIAS CALISTENIA APP'),
+        title: Text('NOTICIAS'),
       ),
       body: bodyNoticias(),
     );
@@ -31,7 +32,7 @@ Widget titulo(BuildContext context) {
       child: Container(
         padding: EdgeInsets.all(15),
         child: Text(
-          'Ultimos eventos Calistenia Chile',
+          'Últimas Noticias Calistenia Chile',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 25,
@@ -83,8 +84,8 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
 
   Widget buildNoticia(Noticia noticia) => Column(children: [
         Card(
-            elevation: 5,
-            margin: EdgeInsets.all(10),
+            elevation: 6,
+            margin: EdgeInsets.all(15),
             shape: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: Colors.black)),
@@ -104,7 +105,7 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
                                 fontSize: 18, fontWeight: FontWeight.bold)))),
                 Padding(
                     padding: EdgeInsets.symmetric(vertical: 10.0),
-                    child: Text(noticia.descripcion,
+                    child: LinkWell(noticia.descripcion,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.orange,
@@ -135,7 +136,13 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
                               style: TextStyle(fontSize: 13)))
                     ]),
               ],
-            ))
+            )),
+        const Divider(
+          height: 20,
+          thickness: 5,
+          indent: 20,
+          endIndent: 20,
+        ),
       ]);
 
   @override
@@ -143,6 +150,25 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
         backgroundColor: Colors.grey.shade900,
         body: Column(
           children: <Widget>[
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                padding: EdgeInsets.all(28),
+                child: Text(
+                  'Últimas Noticias Calistenia Chile',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ),
+            const Divider(
+              height: 10,
+              thickness: 5,
+              indent: 20,
+              endIndent: 20,
+            ),
             Expanded(
               child: ListView.builder(
                 itemCount: noticias.length,

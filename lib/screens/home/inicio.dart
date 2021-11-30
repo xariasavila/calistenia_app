@@ -27,9 +27,9 @@ class _InicioState extends State<Inicio> {
             Align(
               alignment: Alignment.center,
               child: Container(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(15),
                 child: Text(
-                  'Bienvenido! Entérate de lo último!!',
+                  'Bienvenido! Entérate de lo último!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -37,6 +37,12 @@ class _InicioState extends State<Inicio> {
                   ),
                 ),
               ),
+            ),
+            const Divider(
+              height: 10,
+              thickness: 5,
+              indent: 10,
+              endIndent: 10,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +59,7 @@ class _InicioState extends State<Inicio> {
                       child: Column(
                     children: <Widget>[
                       Ink.image(
-                        height: 180,
+                        height: 170,
                         fit: BoxFit.cover,
                         image: AssetImage('assets/images/noticias.jpg'),
                         child: InkWell(
@@ -68,7 +74,7 @@ class _InicioState extends State<Inicio> {
                       ),
                       Container(
                         padding: EdgeInsets.all(10),
-                        child: Text('Noticias',
+                        child: Text('NOTICIAS',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -76,6 +82,12 @@ class _InicioState extends State<Inicio> {
                       ),
                     ],
                   )),
+                ),
+                const Divider(
+                  height: 20,
+                  thickness: 5,
+                  indent: 20,
+                  endIndent: 20,
                 ),
                 Card(
                   // CARD EVENTOS
@@ -89,7 +101,7 @@ class _InicioState extends State<Inicio> {
                       child: Column(
                     children: <Widget>[
                       Ink.image(
-                        height: 180,
+                        height: 170,
                         fit: BoxFit.cover,
                         image: AssetImage('assets/images/eventos.jpg'),
                         child: InkWell(
@@ -104,7 +116,7 @@ class _InicioState extends State<Inicio> {
                       ),
                       Container(
                         padding: EdgeInsets.all(10),
-                        child: Text('Eventos',
+                        child: Text('EVENTOS',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,

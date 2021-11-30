@@ -1,8 +1,9 @@
-import 'package:calistenia_app/screens/account/cuenta2.dart';
+import 'package:calistenia_app/screens/account/info.dart';
 import 'package:calistenia_app/screens/entrenamiento/entrenamiento.dart';
 import 'package:calistenia_app/screens/map/mapa.dart';
 import 'package:flutter/material.dart';
-import 'inicio.dart';
+import 'home/inicio.dart';
+import 'map/mapa.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
     Inicio(),
     Entrenamiento(),
     Mapa(),
-    Cuenta2(),
+    Info(),
   ];
 
   @override
@@ -52,8 +53,8 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Mapa',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Mi cuenta',
+            icon: Icon(Icons.info),
+            label: 'Info',
           ),
         ],
       ),

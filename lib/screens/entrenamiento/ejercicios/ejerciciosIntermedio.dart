@@ -114,7 +114,7 @@ class FiltroEjercicio2State extends State<FiltroEjercicio2> {
               //subtitle: Text(ejercicio.descripcion),
               trailing: Icon(
                 Icons.arrow_forward,
-                color: Colors.orange,
+                color: Colors.green,
               ),
               onTap: () {
                 Navigator.push(

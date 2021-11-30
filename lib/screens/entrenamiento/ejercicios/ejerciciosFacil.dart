@@ -83,45 +83,34 @@ class FiltroEjercicio1State extends State<FiltroEjercicio1> {
       });
 
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Colors.grey.shade900,
-        body: Column(
-          children: <Widget>[
-            buildSearch(),
-            Expanded(
-              child: ListView.builder(
+      backgroundColor: Colors.grey.shade900,
+      body: Column(children: <Widget>[
+        Expanded(
+            child: ListView.builder(
                 itemCount: ejercicios.length,
                 itemBuilder: (context, index) {
                   final ejercicio = ejercicios[index];
-                  return buildEjercicio(ejercicio);
-                },
-              ),
-            ),
-          ],
-        ),
-      );
-
-  Widget buildEjercicio(Ejercicio ejercicio) => Column(children: [
-        Card(
-            margin: EdgeInsets.all(8),
-            child: ListTile(
-              leading: Icon(
-                Icons.accessibility,
-                color: Colors.orange,
-                size: 24.0,
-              ),
-              title: Text(ejercicio.nombre),
-              //subtitle: Text(ejercicio.descripcion),
-              trailing: Icon(
-                Icons.arrow_forward,
-                color: Colors.orange,
-              ),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => DetalleEjercicio(ejercicio)));
-                //   builder: (context) => Hola()));
-              },
-            ))
-      ]);
+                  return Card(
+                      margin: EdgeInsets.all(8),
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.accessibility,
+                          color: Colors.orange,
+                          size: 24.0,
+                        ),
+                        title: Text(ejercicio.nombre),
+                        trailing: Icon(
+                          Icons.arrow_forward,
+                          color: Colors.green,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      DetalleEjercicio(ejercicio)));
+                        },
+                      ));
+                }))
+      ]));
 }

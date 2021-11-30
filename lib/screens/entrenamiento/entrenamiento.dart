@@ -21,9 +21,9 @@ class Entrenamiento extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: Container(
-                  padding: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(15),
                   child: Text(
-                    'Selecciona un tipo de entrenamiento',
+                    'Selecciona Tipo De Entrenamiento',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -31,6 +31,12 @@ class Entrenamiento extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+              const Divider(
+                height: 10,
+                thickness: 5,
+                indent: 10,
+                endIndent: 10,
               ),
               Card(
                 // CARD EJERCI
@@ -44,7 +50,7 @@ class Entrenamiento extends StatelessWidget {
                     child: Column(
                   children: <Widget>[
                     Ink.image(
-                      height: 180,
+                      height: 170,
                       fit: BoxFit.cover,
                       image: AssetImage('assets/images/ejercicio.jpg'),
                       child: InkWell(
@@ -59,7 +65,7 @@ class Entrenamiento extends StatelessWidget {
                     ),
                     Container(
                       padding: EdgeInsets.all(10),
-                      child: Text('Ejercicios',
+                      child: Text('EJERCICIOS',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -67,6 +73,12 @@ class Entrenamiento extends StatelessWidget {
                     ),
                   ],
                 )),
+              ),
+              const Divider(
+                height: 20,
+                thickness: 5,
+                indent: 20,
+                endIndent: 20,
               ),
               Card(
                 // card rutinas
@@ -80,7 +92,7 @@ class Entrenamiento extends StatelessWidget {
                     child: Column(
                   children: <Widget>[
                     Ink.image(
-                      height: 180,
+                      height: 170,
                       fit: BoxFit.cover,
                       image: AssetImage('assets/images/rutina.jpg'),
                       child: InkWell(
@@ -94,7 +106,7 @@ class Entrenamiento extends StatelessWidget {
                     ),
                     Container(
                       padding: EdgeInsets.all(10),
-                      child: Text('Rutinas',
+                      child: Text('RUTINAS',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,

@@ -1,13 +1,13 @@
-class Ejercicio {
-  final int idejercicio;
+class Rutina {
+  // final int idrutina;
   final String nombre;
   final String descripcion;
   final String link;
   final int iddificultad;
   // final Dificultad dificultade;
 
-  Ejercicio({
-    required this.idejercicio,
+  Rutina({
+    // required this.idrutina,
     required this.nombre,
     required this.descripcion,
     required this.link,
@@ -15,8 +15,8 @@ class Ejercicio {
     //  required this.dificultade
   });
 
-  factory Ejercicio.fromJson(Map<String, dynamic> json) => Ejercicio(
-      idejercicio: json['idejercicio'],
+  factory Rutina.fromJson(Map<String, dynamic> json) => Rutina(
+      //  idrutina: json['idrutina'],
       nombre: json['nombre'],
       descripcion: json['descripcion'],
       link: json['link'],
