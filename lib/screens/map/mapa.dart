@@ -136,7 +136,7 @@ class _CenterFabExampleState extends State<CenterFabExample> {
                                               children: <Widget>[
                                                 ListTile(
                                                   title: Text(
-                                                    'Nombre del parque',
+                                                    "hola",
                                                     style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.bold,
