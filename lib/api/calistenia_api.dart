@@ -170,9 +170,10 @@ class CalisteniaApi {
     }
   }
 
+//to way's to call parques
 // GET PARQUES
   static Future<List<Parque>> getParques(String query) async {
-    final url = Uri.parse('http://67.205.155.156:4500/api/noticia');
+    final url = Uri.parse('http://67.205.155.156:4500/api/parque/');
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -182,5 +183,21 @@ class CalisteniaApi {
     } else {
       throw Exception();
     }
+  }
+}
+
+// GET PARQUES
+Future<Parque> fetchParque() async {
+  final response =
+      await http.get(Uri.parse('http://67.205.155.156:4500/api/parque/'));
+
+  if (response.statusCode == 200) {
+    // If the server did return a 200 OK response,
+    // then parse the JSON.
+    return Parque.fromJson(jsonDecode(response.body));
+  } else {
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to load album');
   }
 }

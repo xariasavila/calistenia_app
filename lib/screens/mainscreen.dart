@@ -1,9 +1,10 @@
 import 'package:calistenia_app/screens/account/info.dart';
 import 'package:calistenia_app/screens/entrenamiento/entrenamiento.dart';
-import 'package:calistenia_app/screens/map/mapa.dart';
+import 'package:calistenia_app/screens/map/mapa1.dart';
 import 'package:flutter/material.dart';
 import 'home/inicio.dart';
-import 'map/mapa.dart';
+import 'map/mapa0.dart';
+import 'map/mapa2.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -17,9 +18,9 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> pageList = [
     Inicio(),
-    Entrenamiento(),
-    Mapa(),
-    Info(),
+    Mapa0(),
+    Mapa2(),
+    Mapa1(),
   ];
 
   @override
@@ -46,15 +47,15 @@ class _MainScreenState extends State<MainScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fitness_center),
-            label: 'Entrenamiento',
+            label: 'Mapa0',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.place),
-            label: 'Mapa',
+            label: 'Mapa1',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.info),
-            label: 'Info',
+            label: 'Mapa2',
           ),
         ],
       ),

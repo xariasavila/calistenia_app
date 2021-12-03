@@ -7,7 +7,7 @@ import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 
 import 'package:latlong2/latlong.dart' as latLng;
 
-class Mapa extends StatelessWidget {
+class Mapa1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,6 @@ class CenterFabExample extends StatefulWidget {
 class _CenterFabExampleState extends State<CenterFabExample> {
   late CenterOnLocationUpdate _centerOnLocationUpdate;
   late StreamController<double> _centerCurrentLocationStreamController;
-  List<Ejercicio> ejercicios = [];
   String query = '';
 
   @override
@@ -106,14 +105,16 @@ class _CenterFabExampleState extends State<CenterFabExample> {
               MarkerLayerOptions(markers: [
                 Marker(
                     width: 80.0,
-                    height: 80.0,
-                    point:
-                        latLng.LatLng(-33.44376988704037, -70.65026066620514),
+                    height: 80.00,
+                    // point: latLng.LatLng(parque.latitud, parque.longitud),
+
+                    point: latLng.LatLng(-33.44376988704037,
+                        -70.65026066620514), // a point in my city
                     builder: (ctx) => Container(
                         child: IconButton(
                             icon: Icon(Icons.place),
                             color: Colors.red,
-                            iconSize: 45.0,
+                            iconSize: 45.0, //
                             onPressed: () {
                               showModalBottomSheet(
                                   context: context,

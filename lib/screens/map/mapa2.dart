@@ -28,8 +28,6 @@ class FiltroParque extends StatefulWidget {
 class FiltroParqueState extends State<FiltroParque> {
   Timer? debouncer;
   List<Parque> parques = [];
-  //List<Marker> _markers = [];
-  //var marker = <Marker>[];
   String query = '';
 
   @override
@@ -56,14 +54,7 @@ class FiltroParqueState extends State<FiltroParque> {
     debouncer = Timer(duration, callback);
   }
 
-  /* void getCurrentPosition() async {
-    Position currentLocation = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-
-    setState(() {
-      _center = latLng.LatLng((currentLocation.latitude, currentLocation.longitude);
-    });
-  }*/
-
+//CALL API
   Future init() async {
     final parques = await CalisteniaApi.getParques(query);
     setState(() => this.parques = parques);
@@ -85,6 +76,7 @@ class FiltroParqueState extends State<FiltroParque> {
                 itemBuilder: (context, index) {
                   final parque = parques[index];
                   return FlutterMap(
+                      // MAYBE HERE IS THE ERROR
                       options: new MapOptions(
                         center: new latLng.LatLng(51.5, -0.09),
                         zoom: 13.0,
@@ -101,11 +93,12 @@ class FiltroParqueState extends State<FiltroParque> {
                           Marker(
                               width: 80.0,
                               height: 80.0,
-                              point: latLng.LatLng(51.5, -0.09),
+                              // point: latLng.LatLng(51.5, -0.09),
 
-                              // point: latLng.LatLng(parque.latitud, parque.longitud),
-                              //     point: new LatLng(double.parse(s.lat),double.parse(s.lng)),
-
+                              point: latLng.LatLng(
+                                  double.parse(parque.latitud),
+                                  double.parse(parque
+                                      .longitud)), //HERE I WANT TO SHOW ALL THE PLACES FROM MY API REST
                               builder: (ctx) => Container(
                                   child: IconButton(
                                       icon: Icon(Icons.place),
@@ -135,7 +128,8 @@ class FiltroParqueState extends State<FiltroParque> {
                                                         children: <Widget>[
                                                           ListTile(
                                                             title: Text(
-                                                              'Nombre del parque',
+                                                              parque
+                                                                  .nombre, // PLACE'S NAME
                                                               style: TextStyle(
                                                                 fontWeight:
                                                                     FontWeight
@@ -150,12 +144,12 @@ class FiltroParqueState extends State<FiltroParque> {
                                                             indent: 20,
                                                             endIndent: 20,
                                                           ),
-                                                          ListTile(
+                                                          /* ListTile(
                                                             leading: Icon(
                                                                 Icons.place),
                                                             title: Text(
-                                                                'Direccion del parque '),
-                                                          ),
+                                                                'Direccion del parque '),   //DIRECCTION'S PLACE (NOT IN API YET )
+                                                          ),*/
                                                           const Divider(
                                                             height: 20,
                                                             thickness: 5,
@@ -166,7 +160,7 @@ class FiltroParqueState extends State<FiltroParque> {
                                                             leading: Icon(Icons
                                                                 .thumb_up_alt),
                                                             title: Text(
-                                                                'Descripción  del parque'),
+                                                                'Descripción  del parque'), //DESCRIPTION'S PLACE (parque.descripcion)
                                                           ),
                                                         ]))
                                               ]);
