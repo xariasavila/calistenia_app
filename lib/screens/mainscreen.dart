@@ -19,8 +19,8 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> pageList = [
     Inicio(),
     Mapa0(),
-    Mapa2(),
     Mapa1(),
+    Mapa2(),
   ];
 
   @override
