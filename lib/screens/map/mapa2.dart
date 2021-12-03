@@ -93,12 +93,9 @@ class FiltroParqueState extends State<FiltroParque> {
                           Marker(
                               width: 80.0,
                               height: 80.0,
-                              // point: latLng.LatLng(51.5, -0.09),
+                              point: latLng.LatLng(51.5, -0.09),
 
-                              point: latLng.LatLng(
-                                  double.parse(parque.latitud),
-                                  double.parse(parque
-                                      .longitud)), //HERE I WANT TO SHOW ALL THE PLACES FROM MY API REST
+                              // point: latLng.LatLng(double.parse(parque.latitud),   double.parse(parque .longitud)), //HERE I WANT TO SHOW ALL THE PLACES FROM MY API REST
                               builder: (ctx) => Container(
                                   child: IconButton(
                                       icon: Icon(Icons.place),

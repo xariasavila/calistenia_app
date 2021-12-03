@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:calistenia_app/models/ejercicio.dart';
 import 'package:calistenia_app/screens/map/map_key.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -29,7 +28,6 @@ class CenterFabExample extends StatefulWidget {
 class _CenterFabExampleState extends State<CenterFabExample> {
   late CenterOnLocationUpdate _centerOnLocationUpdate;
   late StreamController<double> _centerCurrentLocationStreamController;
-  String query = '';
 
   @override
   void initState() {
