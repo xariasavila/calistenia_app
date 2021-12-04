@@ -17,14 +17,14 @@ class Mapa5 extends StatefulWidget {
 class _Mapa5State extends State<Mapa5> {
   late CenterOnLocationUpdate _centerOnLocationUpdate;
   late StreamController<double> _centerCurrentLocationStreamController;
-  late Future<Parque> futureParque;
-  List<Marker> markers = [];
+  late Future<List<Parque>> futureParque;
+
   List<Parque> parques = [];
 
   @override
   void initState() {
     super.initState();
-    futureParque = fetchParque();
+    futureParque = getParques2("");
     _centerOnLocationUpdate = CenterOnLocationUpdate.always;
     _centerCurrentLocationStreamController = StreamController<double>();
   }
@@ -46,10 +46,27 @@ class _Mapa5State extends State<Mapa5> {
           title: Text("PARQUES CERCANOS"),
         ),
         body: Center(
-            child: FutureBuilder<Parque>(
+            child: FutureBuilder<List<Parque>>(
                 future: futureParque,
                 builder: (context, snapshot) {
+                  List<Marker> arregloParques = [];
                   if (snapshot.hasData) {
+                    for (int i = 0; i < snapshot.data!.length; i++) {
+                      arregloParques.add(Marker(
+                        width: 80.0,
+                        height: 80.0,
+
+                        //point: latLng.LatLng(-33.44376988704037, -70.65026066620514),
+                        point: latLng.LatLng(
+                            double.parse(snapshot.data![i].latitud),
+                            double.parse(snapshot.data![i].longitud)),
+                        builder: (ctx) => _mapContainer(
+                            snapshot.data![i].nombre,
+                            //snapshot.data![i].direccion,
+                            snapshot.data![i].descripcion),
+                      ));
+                    }
+
                     return FlutterMap(
                         options: MapOptions(
                             center: latLng.LatLng(0, 0),
@@ -97,18 +114,7 @@ class _Mapa5State extends State<Mapa5> {
                           )
                         ],
                         layers: [
-                          // MarkerLayerOptions(markers: markers) []
-                          MarkerLayerOptions(markers: [
-                            for (int i = 0; i < parques.length; i++) markers[i],
-                            Marker(
-                              width: 80.0,
-                              height: 80.0,
-                              point: latLng.LatLng(
-                                  double.parse(snapshot.data!.latitud),
-                                  double.parse(snapshot.data!.longitud)),
-                              builder: (ctx) => _mapContainer(),
-                            )
-                          ])
+                          MarkerLayerOptions(markers: arregloParques)
                         ]);
                   } else if (snapshot.hasError) {
                     return Text('${snapshot.error}');
@@ -118,9 +124,10 @@ class _Mapa5State extends State<Mapa5> {
                 })));
   }
 
-  Widget _mapContainer() {
+  Widget _mapContainer(nombre, descripcion) {
+    // add direccion
     return Center(
-        child: FutureBuilder<Parque>(
+        child: FutureBuilder<List<Parque>>(
             future: futureParque,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
@@ -150,7 +157,7 @@ class _Mapa5State extends State<Mapa5> {
                                           children: <Widget>[
                                             ListTile(
                                               title: Text(
-                                                snapshot.data!.nombre,
+                                                nombre,
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 20,
@@ -165,8 +172,13 @@ class _Mapa5State extends State<Mapa5> {
                                             ),
                                             ListTile(
                                               leading: Icon(Icons.place),
-                                              title:
-                                                  Text('Direccion del parque '),
+                                              title: Text(
+                                                'Direccion del parque ',
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 18,
+                                                ),
+                                              ), //direccion
                                             ),
                                             const Divider(
                                               height: 20,
@@ -177,7 +189,12 @@ class _Mapa5State extends State<Mapa5> {
                                             ListTile(
                                               leading: Icon(Icons.thumb_up_alt),
                                               title: Text(
-                                                  snapshot.data!.descripcion),
+                                                descripcion,
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 18,
+                                                ),
+                                              ),
                                             ),
                                           ]))
                                 ]);

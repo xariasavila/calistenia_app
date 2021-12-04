@@ -24,4 +24,12 @@ class Parque {
         latitud: json['latitud'] as String,
         longitud: json['longitud'] as String);
   }
+
+  Map<String, dynamic> toJson() => {
+        'idparque': idparque,
+        'nombre': nombre,
+        'descripcion': descripcion,
+        'latitud': latitud,
+        'longitud': longitud
+      };
 }
