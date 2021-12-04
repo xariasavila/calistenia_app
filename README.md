@@ -1,6 +1,6 @@
 # calistenia_app
 
-Proyecto desarrollado en Flutter para CIISA
+Proyecto desarrollado en Flutter para Titulo de ingeniería en informática de CIISA
 ## Getting Started
 
 This project is a starting point for a Flutter application.
