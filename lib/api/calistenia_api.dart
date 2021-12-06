@@ -4,6 +4,7 @@ import 'package:calistenia_app/models/evento.dart';
 import 'package:calistenia_app/models/noticia.dart';
 import 'package:calistenia_app/models/parque.dart';
 import 'package:calistenia_app/models/rutina.dart';
+import 'package:calistenia_app/models/usuario.dart';
 import 'package:http/http.dart' as http;
 
 class CalisteniaApi {
@@ -169,12 +170,9 @@ class CalisteniaApi {
       throw Exception();
     }
   }
-
-//to way's to call parques
-// GET PARQUES
-
 }
 
+// GET PARQUES
 Future<List<Parque>> getParques2(String query) async {
   final url = Uri.parse('http://67.205.155.156:4500/api/parque');
   final response = await http.get(url);
@@ -183,6 +181,20 @@ Future<List<Parque>> getParques2(String query) async {
     final List parques = json.decode(response.body);
 
     return parques.map((json) => Parque.fromJson(json)).toList();
+  } else {
+    throw Exception();
+  }
+}
+
+//get usuarios
+Future<List<Usuario>> getUsuarios(String query) async {
+  final url = Uri.parse('http://67.205.155.156:4500/api/usuario');
+  final response = await http.get(url);
+
+  if (response.statusCode == 200) {
+    final List usuarios = json.decode(response.body);
+
+    return usuarios.map((json) => Usuario.fromJson(json)).toList();
   } else {
     throw Exception();
   }

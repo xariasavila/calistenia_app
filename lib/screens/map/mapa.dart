@@ -7,14 +7,14 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:latlong2/latlong.dart' as latLng;
 
-class Mapa5 extends StatefulWidget {
-  const Mapa5({Key? key}) : super(key: key);
+class Mapa extends StatefulWidget {
+  const Mapa({Key? key}) : super(key: key);
 
   @override
-  _Mapa5State createState() => _Mapa5State();
+  _MapaState createState() => _MapaState();
 }
 
-class _Mapa5State extends State<Mapa5> {
+class _MapaState extends State<Mapa> {
   late CenterOnLocationUpdate _centerOnLocationUpdate;
   late StreamController<double> _centerCurrentLocationStreamController;
   late Future<List<Parque>> futureParque;
@@ -156,6 +156,7 @@ class _Mapa5State extends State<Mapa5> {
                                           mainAxisSize: MainAxisSize.min,
                                           children: <Widget>[
                                             ListTile(
+                                              leading: Icon(Icons.place_sharp),
                                               title: Text(
                                                 nombre,
                                                 style: TextStyle(
@@ -171,12 +172,13 @@ class _Mapa5State extends State<Mapa5> {
                                               endIndent: 20,
                                             ),
                                             ListTile(
-                                              leading: Icon(Icons.place),
+                                              leading: Icon(
+                                                  Icons.directions_outlined),
                                               title: Text(
                                                 'Direccion del parque ',
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.bold,
-                                                  fontSize: 18,
+                                                  fontSize: 15,
                                                 ),
                                               ), //direccion
                                             ),
@@ -192,7 +194,7 @@ class _Mapa5State extends State<Mapa5> {
                                                 descripcion,
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.bold,
-                                                  fontSize: 18,
+                                                  fontSize: 15,
                                                 ),
                                               ),
                                             ),

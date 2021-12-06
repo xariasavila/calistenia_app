@@ -1,0 +1,23 @@
+***********************************************************
+PENDIENTES DESARROLLO
+ - Subir admin al server para poder visualizarlo publicamente 
+ - Login usuario en la app ( Xavi + Alex )
+***********************************************************
+
+ DOCUMENTO:
+- Crear documento ejecucion plan de pruebas 
+- Crear dedicatoria (ALEX)
+- Crear bibliografia  (TODOS, ENVIAR LINK DE DOCUMENTACION UTIL EN EL DESARROLLO DE LOS SW Y DOCUMENTO )
+- Modificar criterios de aceptacion de las historias de usuario según cambios e interfaz Dashboard
+
+***********************************************************
+OTROS
+- Crear INVESTIGACIÓN METODOLÓGICA...por ahora la saqué de documento ( Punto 6 del documento de investigacion inical )
+*********************************************************** 
+
+
+
+
+
+
+

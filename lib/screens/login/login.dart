@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'dart:ui';
+import 'package:calistenia_app/screens/home/inicio.dart';
 import 'package:flutter/material.dart';
-import '../mainscreen.dart';
+import 'package:http/http.dart' as http;
 
 class Login extends StatefulWidget {
   @override
@@ -8,6 +10,9 @@ class Login extends StatefulWidget {
 }
 
 class _Login extends State<Login> {
+  final TextEditingController emailController = new TextEditingController();
+  final TextEditingController passController = new TextEditingController();
+
   bool _isHidden = true;
   @override
   Widget build(BuildContext context) {
@@ -57,13 +62,14 @@ class _Login extends State<Login> {
 
   Padding signUp(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
       child: Column(
         children: [
           Align(
               alignment: Alignment.topLeft,
               child: Text(
-                ' CALISTENIA CHILE',
+                'CALISTENIA CHILE',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 22,
@@ -75,10 +81,17 @@ class _Login extends State<Login> {
             height: 30,
           ),
           TextFieldContainer(
-            child: TextField(
-              onChanged: (value) {},
+            child: TextFormField(
+              controller: emailController,
+              onChanged: (value) {
+                if (value.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Debe ingresar email")));
+                }
+                return null;
+              },
               cursorColor: Colors.white,
-              keyboardType: TextInputType.number,
+              // keyboardType: TextInputType.number,
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 15,
@@ -90,7 +103,7 @@ class _Login extends State<Login> {
                   Icons.email,
                   color: Colors.white,
                 ),
-                hintText: 'Rut Alumno',
+                hintText: 'Correo Alumno',
                 hintStyle: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
@@ -104,9 +117,16 @@ class _Login extends State<Login> {
           //SizedBox(height: 5,),
 
           PasswordFieldContainer(
-            child: TextField(
+            child: TextFormField(
+              controller: passController,
               obscureText: _isHidden,
-              onChanged: (value) {},
+              onChanged: (value) {
+                if (value.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Debe ingresar contraseña")));
+                }
+                return null;
+              },
               cursorColor: Colors.white,
               style: TextStyle(
                   color: Colors.white,
@@ -146,10 +166,9 @@ class _Login extends State<Login> {
                 minHeight: 50,
                 minWidth: MediaQuery.of(context).size.width * 0.8),
             onPressed: () {
+              //login();
               Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MainScreen()),
-              );
+                  context, MaterialPageRoute(builder: (context) => Inicio()));
             },
             elevation: 2.0,
             fillColor: Colors.orange[900],
@@ -168,31 +187,36 @@ class _Login extends State<Login> {
               side: BorderSide(color: Colors.black.withOpacity(0.5), width: 2),
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          /*   Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Recuperar contraseña',
-                style: TextStyle(
-                    color: Colors.white.withOpacity(0.8),
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'Ubuntu'),
-              ),
-            ],
-          ),*/
-          SizedBox(
-            height: 10,
-          ),
-
-          SizedBox(
-            height: 10,
-          ),
         ],
       ),
     );
+  }
+
+  Future<void> login() async {
+    if (passController.text.isNotEmpty && emailController.text.isNotEmpty) {
+      var response = await http.post(Uri.parse("http://reqres.in/api/login"),
+          // Uri.parse('http://67.205.155.156:4500/api/usuario'),
+          // headers: {'accept': 'application/json'},
+          body: ({
+            'email': emailController.text,
+            'password': passController.text
+          }));
+      if (response.statusCode == 200) {
+        final body = jsonDecode(response.body);
+        print("login token" + body.toString());
+        //print("login token" + response.toString());
+        //  print("login token" + response.headers["token"].toString());
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Inicio()));
+      } else {
+        print("invalid Credential");
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text("Credenciales inválidas")));
+      }
+    } else {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("No está permitido")));
+    }
   }
 
   void _togglePasswordView() {

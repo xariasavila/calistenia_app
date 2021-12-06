@@ -27,6 +27,7 @@ class Entrenamiento extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Ubuntu',
                       fontSize: 22,
                     ),
                   ),
@@ -119,22 +120,4 @@ class Entrenamiento extends StatelessWidget {
           )
         ])));
   }
-}
-
-Widget titulo(context) {
-  return Column(children: [
-    Align(
-      alignment: Alignment.center,
-      child: Container(
-        padding: EdgeInsets.all(30),
-        child: Text(
-          '¿Qué tipo de entrenamiento realizarás?',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-        ),
-      ),
-    ),
-  ]);
 }

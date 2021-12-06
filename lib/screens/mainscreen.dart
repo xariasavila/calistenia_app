@@ -1,6 +1,6 @@
 import 'package:calistenia_app/screens/account/info.dart';
 import 'package:calistenia_app/screens/entrenamiento/entrenamiento.dart';
-import 'package:calistenia_app/screens/map/mapa5.dart';
+import 'package:calistenia_app/screens/map/mapa.dart';
 import 'package:flutter/material.dart';
 import 'home/inicio.dart';
 
@@ -17,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> pageList = [
     Inicio(),
     Entrenamiento(),
-    Mapa5(),
+    Mapa(),
     Info(),
   ];
 
@@ -52,8 +52,8 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Mapa',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.info),
-            label: 'Info',
+            icon: Icon(Icons.mail),
+            label: 'Contacto',
           ),
         ],
       ),
