@@ -1,5 +1,5 @@
 class Evento {
-  final int idevento;
+  final String idevento;
   final String nombre;
   final String fecha;
   //final String hora;

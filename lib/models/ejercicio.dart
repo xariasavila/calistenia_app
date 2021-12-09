@@ -1,9 +1,9 @@
 class Ejercicio {
-  final int idejercicio;
+  final String idejercicio;
   final String nombre;
   final String descripcion;
   final String link;
-  final int iddificultad;
+  final String iddificultad;
   // final Dificultad dificultade;
 
   Ejercicio({

@@ -50,7 +50,7 @@ class _InfoState extends State<Info> {
                   padding: const EdgeInsets.all(8.0),
                   child: LinkWell(
                       'Calistenia Chile fundada en 2020 por Danilo Venegas, ofrece esta herramienta tecnológica para la instruccion de los alumnos en tiempos de pandemia. \n\n\nPara sugerencias o problemas técnicos favor contactar a: Soporte@Calisteniaapp.cl',
-                      style: TextStyle(fontSize: 18)),
+                      style: TextStyle(fontSize: 18, color: Colors.white)),
                 )
               ])),
           const Divider(

@@ -130,7 +130,7 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
                               horizontal: 2.0, vertical: 7.0),
                           width: 75,
                           height: 30,
-                          child: Text(noticia.fecha,
+                          child: Text(noticia.createdAt,
                               overflow: TextOverflow.clip,
                               textAlign: TextAlign.left,
                               style: TextStyle(fontSize: 13)))

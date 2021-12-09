@@ -3,7 +3,7 @@ class Rutina {
   final String nombre;
   final String descripcion;
   final String link;
-  final int iddificultad;
+  final String iddificultad;
   // final Dificultad dificultade;
 
   Rutina({

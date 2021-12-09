@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:ui';
 import 'package:calistenia_app/screens/home/inicio.dart';
+import 'package:calistenia_app/screens/mainscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -166,9 +167,9 @@ class _Login extends State<Login> {
                 minHeight: 50,
                 minWidth: MediaQuery.of(context).size.width * 0.8),
             onPressed: () {
-              //login();
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Inicio()));
+              // login();
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MainScreen()));
             },
             elevation: 2.0,
             fillColor: Colors.orange[900],
@@ -194,11 +195,12 @@ class _Login extends State<Login> {
 
   Future<void> login() async {
     if (passController.text.isNotEmpty && emailController.text.isNotEmpty) {
-      var response = await http.post(Uri.parse("http://reqres.in/api/login"),
+      var response = await http.post(
+          Uri.parse("http://67.205.155.156:4500/api/usuario"),
           // Uri.parse('http://67.205.155.156:4500/api/usuario'),
           // headers: {'accept': 'application/json'},
           body: ({
-            'email': emailController.text,
+            'correo': emailController.text,
             'password': passController.text
           }));
       if (response.statusCode == 200) {

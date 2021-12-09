@@ -14,4 +14,11 @@
 
 // don't miss this one
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> 
+
+
+xmlns:tools="http://schemas.android.com/tools"
+
+<application
+        android:usesCleartextTraffic="true"
+        tools:node="merge" />
 </manifest>

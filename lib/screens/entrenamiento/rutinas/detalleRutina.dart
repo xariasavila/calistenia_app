@@ -32,7 +32,7 @@ class DetalleRutina extends StatelessWidget {
                       //width: 200,
                       fit: BoxFit.cover,
                     ),
-                    if (rutina.iddificultad == 1)
+                    if (rutina.iddificultad == "717451157704015873")
                       Link(
                         target: LinkTarget.blank,
                         uri: Uri.parse(rutina.link),
@@ -44,7 +44,7 @@ class DetalleRutina extends StatelessWidget {
                             onPressed: followLink,
                             child: Text("VER EJERCICIO")),
                       ),
-                    if (rutina.iddificultad == 2)
+                    if (rutina.iddificultad == "717451464924823553")
                       Link(
                         target: LinkTarget.blank,
                         uri: Uri.parse(rutina.link),
@@ -56,7 +56,7 @@ class DetalleRutina extends StatelessWidget {
                             onPressed: followLink,
                             child: Text("VER EJERCICIO")),
                       ),
-                    if (rutina.iddificultad == 3)
+                    if (rutina.iddificultad == "717451484026765313")
                       Link(
                         target: LinkTarget.blank,
                         uri: Uri.parse(rutina.link),
@@ -95,7 +95,7 @@ class DetalleRutina extends StatelessWidget {
                 Container(
                     margin:
                         EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0)),
-                if (rutina.iddificultad == 1)
+                if (rutina.iddificultad == "717451157704015873")
                   Chip(
                     backgroundColor: Colors.green,
                     label: Text("FÁCIL",
@@ -104,7 +104,7 @@ class DetalleRutina extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         )),
                   ),
-                if (rutina.iddificultad == 2)
+                if (rutina.iddificultad == "717451464924823553")
                   Chip(
                     backgroundColor: Colors.orange,
                     label: Text("INTERMEDIO",
@@ -113,7 +113,7 @@ class DetalleRutina extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         )),
                   ),
-                if (rutina.iddificultad == 3)
+                if (rutina.iddificultad == "717451484026765313")
                   Chip(
                     backgroundColor: Colors.red,
                     label: Text("DIFÍCIL",

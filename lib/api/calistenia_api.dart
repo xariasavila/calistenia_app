@@ -10,9 +10,9 @@ import 'package:http/http.dart' as http;
 class CalisteniaApi {
   // GET EJERCICIOS FACILES
   static Future<List<Ejercicio>> getEjercicios1(String query) async {
-    final url =
-        Uri.parse('http://67.205.155.156:4500/api/ejerciciodificultad/1');
-    final response = await http.get(url);
+    var url = Uri.parse(
+        'http://back-calistenia.herokuapp.com/api/ejerciciodificultad/717451157704015873');
+    var response = await http.get(url);
 
     if (response.statusCode == 200) {
       final List ejercicios = json.decode(response.body);
@@ -34,9 +34,9 @@ class CalisteniaApi {
 
   // GET EJERCICIOS INTERMEDIOS
   static Future<List<Ejercicio>> getEjercicios2(String query) async {
-    final url =
-        Uri.parse('http://67.205.155.156:4500/api/ejerciciodificultad/2');
-    final response = await http.get(url);
+    var url = Uri.parse(
+        'http://back-calistenia.herokuapp.com/api/ejerciciodificultad/717451464924823553');
+    var response = await http.get(url);
 
     if (response.statusCode == 200) {
       final List ejercicios = json.decode(response.body);
@@ -58,9 +58,9 @@ class CalisteniaApi {
 
   // GET EJERCICIOS AVANZADOS
   static Future<List<Ejercicio>> getEjercicios3(String query) async {
-    final url =
-        Uri.parse('http://67.205.155.156:4500/api/ejerciciodificultad/3');
-    final response = await http.get(url);
+    var url = Uri.parse(
+        'http://back-calistenia.herokuapp.com/api/ejerciciodificultad/717451484026765313');
+    var response = await http.get(url);
 
     if (response.statusCode == 200) {
       final List ejercicios = json.decode(response.body);
@@ -82,8 +82,9 @@ class CalisteniaApi {
 
   // GET RUTINA FACIL
   static Future<List<Rutina>> getRutinas1(String query) async {
-    final url = Uri.parse('http://67.205.155.156:4500/api/rutinadificultad/1');
-    final response = await http.get(url);
+    var url = Uri.parse(
+        'http://back-calistenia.herokuapp.com/api/rutinadificultad/717451157704015873');
+    var response = await http.get(url);
 
     if (response.statusCode == 200) {
       final List rutinas = json.decode(response.body);
@@ -103,8 +104,9 @@ class CalisteniaApi {
 
   // GET RUTINA INTERMEDIOS
   static Future<List<Rutina>> getRutinas2(String query) async {
-    final url = Uri.parse('http://67.205.155.156:4500/api/rutinadificultad/2');
-    final response = await http.get(url);
+    var url = Uri.parse(
+        'http://back-calistenia.herokuapp.com/api/rutinadificultad/717451464924823553');
+    var response = await http.get(url);
 
     if (response.statusCode == 200) {
       final List rutinas = json.decode(response.body);
@@ -124,8 +126,9 @@ class CalisteniaApi {
 
   // GET RUTINA AVANZADOS
   static Future<List<Rutina>> getRutinas3(String query) async {
-    final url = Uri.parse('http://67.205.155.156:4500/api/rutinadificultad/3');
-    final response = await http.get(url);
+    var url = Uri.parse(
+        'http://back-calistenia.herokuapp.com/api/rutinadificultad/717451484026765313');
+    var response = await http.get(url);
 
     if (response.statusCode == 200) {
       final List rutinas = json.decode(response.body);
@@ -145,8 +148,8 @@ class CalisteniaApi {
 
 // GET NOTICIAS
   static Future<List<Noticia>> getNoticias(String query) async {
-    final url = Uri.parse('http://67.205.155.156:4500/api/noticia');
-    final response = await http.get(url);
+    var url = Uri.parse('http://back-calistenia.herokuapp.com/api/noticia');
+    var response = await http.get(url);
 
     if (response.statusCode == 200) {
       final List noticias = json.decode(response.body);
@@ -159,8 +162,8 @@ class CalisteniaApi {
 
 // GET EVENTOS
   static Future<List<Evento>> getEventos(String query) async {
-    final url = Uri.parse('http://67.205.155.156:4500/api/evento');
-    final response = await http.get(url);
+    var url = Uri.parse('http://67.205.155.156:4500/api/evento');
+    var response = await http.get(url);
 
     if (response.statusCode == 200) {
       final List eventos = json.decode(response.body);
@@ -174,8 +177,8 @@ class CalisteniaApi {
 
 // GET PARQUES
 Future<List<Parque>> getParques2(String query) async {
-  final url = Uri.parse('http://67.205.155.156:4500/api/parque');
-  final response = await http.get(url);
+  var url = Uri.parse('http://67.205.155.156:4500/api/parque');
+  var response = await http.get(url);
 
   if (response.statusCode == 200) {
     final List parques = json.decode(response.body);

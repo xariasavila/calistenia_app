@@ -1,5 +1,5 @@
 class Parque {
-  final int idparque;
+  final String idparque;
   final String nombre;
   //final String direccion;
   final String latitud;
@@ -17,7 +17,7 @@ class Parque {
 
   factory Parque.fromJson(Map<String, dynamic> json) {
     return Parque(
-        idparque: json['idparque'] as int,
+        idparque: json['idparque'] as String,
         nombre: json['nombre'] as String,
         //direccion: json['direccion'] as String,
         descripcion: json['descripcion'] as String,
