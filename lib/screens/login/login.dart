@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:ui';
-import 'package:calistenia_app/screens/home/inicio.dart';
-import 'package:calistenia_app/screens/mainscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
+import '../mainscreen.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -167,9 +167,10 @@ class _Login extends State<Login> {
                 minHeight: 50,
                 minWidth: MediaQuery.of(context).size.width * 0.8),
             onPressed: () {
-              // login();
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MainScreen()));
+              // signIn(emailController.text, passController.text);
+              login();
+              // Navigator.push(context,
+              //  MaterialPageRoute(builder: (context) => MainScreen()));
             },
             elevation: 2.0,
             fillColor: Colors.orange[900],
@@ -196,28 +197,28 @@ class _Login extends State<Login> {
   Future<void> login() async {
     if (passController.text.isNotEmpty && emailController.text.isNotEmpty) {
       var response = await http.post(
-          Uri.parse("http://67.205.155.156:4500/api/usuario"),
-          // Uri.parse('http://67.205.155.156:4500/api/usuario'),
+          Uri.parse("https://back-calistenia.herokuapp.com/api/login"),
+          //Uri.parse("https://reqres.in/api/login"),
           // headers: {'accept': 'application/json'},
           body: ({
             'correo': emailController.text,
             'password': passController.text
           }));
+
       if (response.statusCode == 200) {
-        final body = jsonDecode(response.body);
-        print("login token" + body.toString());
-        //print("login token" + response.toString());
-        //  print("login token" + response.headers["token"].toString());
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Inicio()));
-      } else {
-        print("invalid Credential");
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("Credenciales inválidas")));
+        Map<String, dynamic> jsonResponse = jsonDecode(response.body);
+
+        jsonResponse.forEach((key, value) {
+          String respuesta = key;
+          if (respuesta == "success") {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MainScreen()));
+          } else if (respuesta == "error") {
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text("Credenciales inválidas")));
+          }
+        });
       }
-    } else {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text("No está permitido")));
     }
   }
 

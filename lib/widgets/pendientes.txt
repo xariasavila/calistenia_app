@@ -18,6 +18,53 @@ OTROS
 
 
 
+DASHBOARD:
+se puede entrar por url directa https://admin-calistenia.vercel.app/dashboard/home
+boton salir no hace nada.
+
+LOGIN:
+Entra con cualquier credencial
+
+PARQUE
+CRUD OK 
+
+EJERCICIO: 
+INSERTAR: no permite seleccionar nivel del ejercicio
+ELIMINAR: OK
+EDITAR no permite editar dificultad
+
+RUTINA:
+SOLO ES POSIBLE EDITAR EL NOMBRE DE LA RUTINA, NO LOS DEMAS CAMPOS
+boton editar dice "Artista"
+INSERTAR: No muestra opciones de dificultad
+ELIMINAR: OK
+
+
+NOTICIA:
+INSERTAR: QUEDA PEGADO AL GUARDAR (POR EL DATEPICKER)
+ELIMINAR: OK
+
+
+
+EVENTO:
+Placeholder dice "select date"
+Selecciona instructor no permite seleccionar nada (ELIMINAR ESTE CAMPO)
+se queda pegado al guardar un registro
+se queda pegado al EDITAR un registro
+
+DIFICULTADES:
+CRUD OK
+
+USUARIOS:
+Contraseña genera un aleatorio, no la escrita en campo de texto
+ELIMINAR OK
+
+
+LOGIN APP 
+La APP no reconoce ninguna credencial valida
+AL HACER POST ARROJA ERROR LA API YA QUE SOLICITA INGRESAR NOMBRE
+
+
 
 
 

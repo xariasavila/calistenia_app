@@ -11,7 +11,7 @@ class CalisteniaApi {
   // GET EJERCICIOS FACILES
   static Future<List<Ejercicio>> getEjercicios1(String query) async {
     var url = Uri.parse(
-        'http://back-calistenia.herokuapp.com/api/ejerciciodificultad/717451157704015873');
+        'http://back-calistenia.herokuapp.com/api/ejerciciodificultad/717592914781765633');
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -35,7 +35,7 @@ class CalisteniaApi {
   // GET EJERCICIOS INTERMEDIOS
   static Future<List<Ejercicio>> getEjercicios2(String query) async {
     var url = Uri.parse(
-        'http://back-calistenia.herokuapp.com/api/ejerciciodificultad/717451464924823553');
+        'http://back-calistenia.herokuapp.com/api/ejerciciodificultad/717592934008586241');
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -59,7 +59,7 @@ class CalisteniaApi {
   // GET EJERCICIOS AVANZADOS
   static Future<List<Ejercicio>> getEjercicios3(String query) async {
     var url = Uri.parse(
-        'http://back-calistenia.herokuapp.com/api/ejerciciodificultad/717451484026765313');
+        'http://back-calistenia.herokuapp.com/api/ejerciciodificultad/717592951292395521');
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -83,7 +83,7 @@ class CalisteniaApi {
   // GET RUTINA FACIL
   static Future<List<Rutina>> getRutinas1(String query) async {
     var url = Uri.parse(
-        'http://back-calistenia.herokuapp.com/api/rutinadificultad/717451157704015873');
+        'http://back-calistenia.herokuapp.com/api/rutinadificultad/717592914781765633');
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -105,7 +105,7 @@ class CalisteniaApi {
   // GET RUTINA INTERMEDIOS
   static Future<List<Rutina>> getRutinas2(String query) async {
     var url = Uri.parse(
-        'http://back-calistenia.herokuapp.com/api/rutinadificultad/717451464924823553');
+        'http://back-calistenia.herokuapp.com/api/rutinadificultad/717592934008586241');
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -127,7 +127,7 @@ class CalisteniaApi {
   // GET RUTINA AVANZADOS
   static Future<List<Rutina>> getRutinas3(String query) async {
     var url = Uri.parse(
-        'http://back-calistenia.herokuapp.com/api/rutinadificultad/717451484026765313');
+        'http://back-calistenia.herokuapp.com/api/rutinadificultad/717592951292395521');
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -148,7 +148,7 @@ class CalisteniaApi {
 
 // GET NOTICIAS
   static Future<List<Noticia>> getNoticias(String query) async {
-    var url = Uri.parse('http://back-calistenia.herokuapp.com/api/noticia');
+    var url = Uri.parse('https://back-calistenia.herokuapp.com/api/noticia');
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -162,7 +162,7 @@ class CalisteniaApi {
 
 // GET EVENTOS
   static Future<List<Evento>> getEventos(String query) async {
-    var url = Uri.parse('http://67.205.155.156:4500/api/evento');
+    var url = Uri.parse('https://back-calistenia.herokuapp.com/api/evento');
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
@@ -177,7 +177,7 @@ class CalisteniaApi {
 
 // GET PARQUES
 Future<List<Parque>> getParques2(String query) async {
-  var url = Uri.parse('http://67.205.155.156:4500/api/parque');
+  var url = Uri.parse('https://back-calistenia.herokuapp.com/api/parque');
   var response = await http.get(url);
 
   if (response.statusCode == 200) {
@@ -191,7 +191,7 @@ Future<List<Parque>> getParques2(String query) async {
 
 //get usuarios
 Future<List<Usuario>> getUsuarios(String query) async {
-  final url = Uri.parse('http://67.205.155.156:4500/api/usuario');
+  final url = Uri.parse('https://back-calistenia.herokuapp.com/api/usuario');
   final response = await http.get(url);
 
   if (response.statusCode == 200) {

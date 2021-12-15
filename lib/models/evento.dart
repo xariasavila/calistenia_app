@@ -4,14 +4,12 @@ class Evento {
   final String fecha;
   //final String hora;
   final String descripcion;
-  final int idinstructor;
 
   const Evento({
     required this.idevento,
     required this.nombre,
     required this.fecha,
     required this.descripcion,
-    required this.idinstructor,
   });
 
   factory Evento.fromJson(Map<String, dynamic> json) => Evento(
@@ -19,7 +17,6 @@ class Evento {
         nombre: json['nombre'],
         fecha: json['fecha'],
         descripcion: json['descripcion'],
-        idinstructor: json['idinstructor'],
       );
 
   Map<String, dynamic> toJson() => {
@@ -27,6 +24,5 @@ class Evento {
         'nombre': nombre,
         'fecha': fecha,
         'descripcion': descripcion,
-        'idinstructor': idinstructor,
       };
 }

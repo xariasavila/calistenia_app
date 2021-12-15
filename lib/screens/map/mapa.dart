@@ -165,7 +165,7 @@ class _MapaState extends State<Mapa> {
                                                 ),
                                               ),
                                             ),
-                                            const Divider(
+                                            /*  const Divider(
                                               height: 20,
                                               thickness: 5,
                                               indent: 20,
@@ -181,7 +181,7 @@ class _MapaState extends State<Mapa> {
                                                   fontSize: 15,
                                                 ),
                                               ), //direccion
-                                            ),
+                                            ),*/
                                             const Divider(
                                               height: 20,
                                               thickness: 5,

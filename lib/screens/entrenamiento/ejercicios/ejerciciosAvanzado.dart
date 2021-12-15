@@ -3,7 +3,6 @@ import 'package:calistenia_app/api/calistenia_api.dart';
 import 'package:calistenia_app/models/ejercicio.dart';
 import 'package:calistenia_app/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 import 'detalleEjercicio.dart';
 

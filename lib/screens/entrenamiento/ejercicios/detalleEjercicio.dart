@@ -33,7 +33,7 @@ class DetalleEjercicio extends StatelessWidget {
                       //width: 200,
                       fit: BoxFit.cover,
                     ),
-                    if (ejercicio.iddificultad == "717451157704015873")
+                    if (ejercicio.iddificultad == "717592914781765633")
                       Link(
                         target: LinkTarget.blank,
                         uri: Uri.parse(ejercicio.link),
@@ -45,7 +45,7 @@ class DetalleEjercicio extends StatelessWidget {
                             onPressed: followLink,
                             child: Text("VER EJERCICIO")),
                       ),
-                    if (ejercicio.iddificultad == "717451464924823553")
+                    if (ejercicio.iddificultad == "717592934008586241")
                       Link(
                         target: LinkTarget.blank,
                         uri: Uri.parse(ejercicio.link),
@@ -57,7 +57,7 @@ class DetalleEjercicio extends StatelessWidget {
                             onPressed: followLink,
                             child: Text("VER EJERCICIO")),
                       ),
-                    if (ejercicio.iddificultad == "717451484026765313")
+                    if (ejercicio.iddificultad == "717592951292395521")
                       Link(
                         target: LinkTarget.blank,
                         uri: Uri.parse(ejercicio.link),
@@ -96,7 +96,7 @@ class DetalleEjercicio extends StatelessWidget {
                 Container(
                     margin:
                         EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0)),
-                if (ejercicio.iddificultad == "717451157704015873")
+                if (ejercicio.iddificultad == "717592914781765633")
                   Chip(
                     backgroundColor: Colors.green,
                     label: Text("FÁCIL",
@@ -105,7 +105,7 @@ class DetalleEjercicio extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         )),
                   ),
-                if (ejercicio.iddificultad == "717451464924823553")
+                if (ejercicio.iddificultad == "717592934008586241")
                   Chip(
                     backgroundColor: Colors.orange,
                     label: Text("INTERMEDIO",
@@ -114,7 +114,7 @@ class DetalleEjercicio extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         )),
                   ),
-                if (ejercicio.iddificultad == "717451484026765313")
+                if (ejercicio.iddificultad == "717592951292395521")
                   Chip(
                     backgroundColor: Colors.red,
                     label: Text("DIFÍCIL",

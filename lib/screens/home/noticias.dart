@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:calistenia_app/api/calistenia_api.dart';
 import 'package:calistenia_app/models/noticia.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:linkwell/linkwell.dart';
 
@@ -14,7 +13,7 @@ class Noticias extends StatelessWidget {
         shadowColor: Colors.deepOrange,
         backgroundColor: Colors.black,
         centerTitle: true,
-        title: Text('NOTICIAS'),
+        title: Text('NOTICIAS Y EVENTOS'),
       ),
       body: bodyNoticias(),
     );
@@ -23,24 +22,6 @@ class Noticias extends StatelessWidget {
 
 Widget bodyNoticias() {
   return FiltroNoticia();
-}
-
-Widget titulo(BuildContext context) {
-  return Column(children: [
-    Align(
-      alignment: Alignment.center,
-      child: Container(
-        padding: EdgeInsets.all(15),
-        child: Text(
-          'Últimas Noticias Calistenia Chile',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-          ),
-        ),
-      ),
-    ),
-  ]);
 }
 
 class FiltroNoticia extends StatefulWidget {
@@ -153,9 +134,9 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
             Align(
               alignment: Alignment.center,
               child: Container(
-                padding: EdgeInsets.all(28),
+                padding: EdgeInsets.all(25),
                 child: Text(
-                  'Últimas Noticias Calistenia Chile',
+                  'Actualizaciones de Calistenia Chile',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,

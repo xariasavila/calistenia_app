@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:calistenia_app/api/calistenia_api.dart';
 import 'package:calistenia_app/models/evento.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:linkwell/linkwell.dart';
 

@@ -1,10 +1,8 @@
 import 'dart:convert';
-
-import 'package:calistenia_app/screens/home/inicio.dart';
+import 'package:calistenia_app/screens/mainscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -40,28 +38,20 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   signIn(String email, password) async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    Map data = {'email': email, 'password': password};
+    Map data = {'correo': email, 'password': password};
 
     var jsonResponse;
 
-    final url = Uri.parse("http://reqres.in/api/login");
+    final url = Uri.parse("https://back-calistenia.herokuapp.com/api/login");
     final response = await http.post(url, body: data);
 
     if (response.statusCode == 200) {
       jsonResponse = json.decode(response.body);
       if (jsonResponse != null) {
-        setState(() {
-          _isLoading = false;
-        });
-        sharedPreferences.setString("token", jsonResponse['token']);
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Inicio()));
+            context, MaterialPageRoute(builder: (context) => MainScreen()));
       }
     } else {
-      setState(() {
-        _isLoading = false;
-      });
       print(response.body);
     }
   }

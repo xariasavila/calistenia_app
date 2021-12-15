@@ -1,5 +1,5 @@
-import 'package:calistenia_app/screens/login/login.dart';
 import 'package:flutter/material.dart';
+import 'screens/login/login.dart';
 
 void main() => runApp(MyApp());
 
