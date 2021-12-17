@@ -2,7 +2,6 @@ class Evento {
   final String idevento;
   final String nombre;
   final String fecha;
-  //final String hora;
   final String descripcion;
 
   const Evento({

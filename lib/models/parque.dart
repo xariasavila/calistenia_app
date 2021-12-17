@@ -1,7 +1,6 @@
 class Parque {
   final String idparque;
   final String nombre;
-  //final String direccion;
   final String latitud;
   final String longitud;
   final String descripcion;
@@ -9,7 +8,6 @@ class Parque {
   Parque({
     required this.idparque,
     required this.nombre,
-    //required this.direccion,
     required this.descripcion,
     required this.latitud,
     required this.longitud,
@@ -19,7 +17,6 @@ class Parque {
     return Parque(
         idparque: json['idparque'] as String,
         nombre: json['nombre'] as String,
-        //direccion: json['direccion'] as String,
         descripcion: json['descripcion'] as String,
         latitud: json['latitud'] as String,
         longitud: json['longitud'] as String);

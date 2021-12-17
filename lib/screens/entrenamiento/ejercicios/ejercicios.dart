@@ -144,7 +144,7 @@ Widget titulo(BuildContext context) {
       child: Container(
         padding: EdgeInsets.all(15),
         child: Text(
-          'Selecciona la dificultad',
+          'Selecciona La Dificultad',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 22,

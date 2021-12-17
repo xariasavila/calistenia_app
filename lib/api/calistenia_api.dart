@@ -4,7 +4,6 @@ import 'package:calistenia_app/models/evento.dart';
 import 'package:calistenia_app/models/noticia.dart';
 import 'package:calistenia_app/models/parque.dart';
 import 'package:calistenia_app/models/rutina.dart';
-import 'package:calistenia_app/models/usuario.dart';
 import 'package:http/http.dart' as http;
 
 class CalisteniaApi {
@@ -189,6 +188,7 @@ Future<List<Parque>> getParques2(String query) async {
   }
 }
 
+/*
 //get usuarios
 Future<List<Usuario>> getUsuarios(String query) async {
   final url = Uri.parse('https://back-calistenia.herokuapp.com/api/usuario');
@@ -201,4 +201,4 @@ Future<List<Usuario>> getUsuarios(String query) async {
   } else {
     throw Exception();
   }
-}
+}*/

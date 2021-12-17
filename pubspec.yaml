@@ -38,6 +38,7 @@ dependencies:
   flutter_map_location_marker: ^1.0.0
   google_maps_flutter: ^2.1.1
   font_awesome_flutter: ^9.2.0
+  animated_text_kit: ^4.2.1
 
 
 

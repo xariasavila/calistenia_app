@@ -66,6 +66,22 @@ class _MapaState extends State<Mapa> {
                             snapshot.data![i].descripcion),
                       ));
                     }
+                    Positioned(
+                      right: 15,
+                      bottom: 15,
+                      child: FloatingActionButton(
+                        backgroundColor: Colors.orange,
+                        onPressed: () {
+                          setState(() => _centerOnLocationUpdate =
+                              CenterOnLocationUpdate.always);
+                          _centerCurrentLocationStreamController.add(15);
+                        },
+                        child: Icon(
+                          Icons.my_location,
+                          color: Colors.black,
+                        ),
+                      ),
+                    );
 
                     return FlutterMap(
                         options: MapOptions(
@@ -165,23 +181,6 @@ class _MapaState extends State<Mapa> {
                                                 ),
                                               ),
                                             ),
-                                            /*  const Divider(
-                                              height: 20,
-                                              thickness: 5,
-                                              indent: 20,
-                                              endIndent: 20,
-                                            ),
-                                            ListTile(
-                                              leading: Icon(
-                                                  Icons.directions_outlined),
-                                              title: Text(
-                                                'Direccion del parque ',
-                                                style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 15,
-                                                ),
-                                              ), //direccion
-                                            ),*/
                                             const Divider(
                                               height: 20,
                                               thickness: 5,

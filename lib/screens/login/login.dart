@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -168,6 +167,7 @@ class _Login extends State<Login> {
                 minWidth: MediaQuery.of(context).size.width * 0.8),
             onPressed: () {
               // signIn(emailController.text, passController.text);
+              signUp(context);
               login();
               // Navigator.push(context,
               //  MaterialPageRoute(builder: (context) => MainScreen()));
@@ -198,14 +198,12 @@ class _Login extends State<Login> {
     if (passController.text.isNotEmpty && emailController.text.isNotEmpty) {
       var response = await http.post(
           Uri.parse("https://back-calistenia.herokuapp.com/api/login"),
-          //Uri.parse("https://reqres.in/api/login"),
-          // headers: {'accept': 'application/json'},
           body: ({
             'correo': emailController.text,
             'password': passController.text
           }));
 
-      if (response.statusCode == 200) {
+      /* if (response.statusCode == 200) {
         Map<String, dynamic> jsonResponse = jsonDecode(response.body);
 
         jsonResponse.forEach((key, value) {
@@ -218,7 +216,17 @@ class _Login extends State<Login> {
                 SnackBar(content: Text("Credenciales inválidas")));
           }
         });
+      } */
+      if (response.statusCode == 200) {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => MainScreen()));
+      } else if (response.statusCode != 200) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text("Credenciales inválidas")));
       }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("No permitido, debe ingresar datos")));
     }
   }
 

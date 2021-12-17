@@ -1,14 +1,13 @@
 import 'package:calistenia_app/screens/home/noticias.dart';
-//import 'package:calistenia_app/screens/home/eventos.dart';
-
+import 'package:calistenia_app/screens/home/eventos.dart';
 import 'package:flutter/material.dart';
 
-class Inicio2 extends StatefulWidget {
+class Inicio extends StatefulWidget {
   @override
-  _Inicio2State createState() => _Inicio2State();
+  _InicioState createState() => _InicioState();
 }
 
-class _Inicio2State extends State<Inicio2> {
+class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +26,9 @@ class _Inicio2State extends State<Inicio2> {
             Align(
               alignment: Alignment.center,
               child: Container(
-                padding: EdgeInsets.all(55),
+                padding: EdgeInsets.all(15),
                 child: Text(
-                  'Bienvenido! \n \nEntérate de lo último!',
+                  'Bienvenido! Entérate de lo último!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -74,7 +73,7 @@ class _Inicio2State extends State<Inicio2> {
                       ),
                       Container(
                         padding: EdgeInsets.all(10),
-                        child: Text('NOTICIAS Y EVENTOS',
+                        child: Text('NOTICIAS',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -88,6 +87,42 @@ class _Inicio2State extends State<Inicio2> {
                   thickness: 5,
                   indent: 20,
                   endIndent: 20,
+                ),
+                Card(
+                  // CARD EVENTOS
+                  color: Colors.orange,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)),
+                  clipBehavior: Clip.hardEdge,
+                  margin: EdgeInsets.all(20),
+                  elevation: 8,
+                  child: ClipRRect(
+                      child: Column(
+                    children: <Widget>[
+                      Ink.image(
+                        height: 170,
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/images/eventos.jpg'),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Eventos()),
+                            );
+                          },
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        child: Text('EVENTOS',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            )),
+                      ),
+                    ],
+                  )),
                 ),
               ],
             )

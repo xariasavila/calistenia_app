@@ -13,7 +13,7 @@ class Noticias extends StatelessWidget {
         shadowColor: Colors.deepOrange,
         backgroundColor: Colors.black,
         centerTitle: true,
-        title: Text('NOTICIAS Y EVENTOS'),
+        title: Text('NOTICIAS'),
       ),
       body: bodyNoticias(),
     );
@@ -84,6 +84,12 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
                             textAlign: TextAlign.left,
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold)))),
+                const Divider(
+                  height: 10,
+                  thickness: 2,
+                  indent: 20,
+                  endIndent: 20,
+                ),
                 Padding(
                     padding: EdgeInsets.symmetric(vertical: 10.0),
                     child: LinkWell(noticia.descripcion,

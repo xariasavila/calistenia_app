@@ -71,10 +71,10 @@ class FiltroEventoState extends State<FiltroEvento> {
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: Colors.black)),
             child: Column(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 Container(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(5.0),
                     child: ListTile(
                         leading: CircleAvatar(
                             radius: 22,
@@ -84,53 +84,44 @@ class FiltroEventoState extends State<FiltroEvento> {
                             textAlign: TextAlign.left,
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold)))),
-                Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10.0),
-                    child: LinkWell(evento.descripcion,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.orange,
-                          fontSize: 15,
-                        ))),
-                SizedBox(
+                const Divider(
                   height: 10,
+                  thickness: 2,
+                  indent: 20,
+                  endIndent: 20,
                 ),
                 Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Container(
-                          padding: new EdgeInsets.symmetric(
-                              horizontal: 11.0, vertical: 6.0),
-                          child: Text("Fecha Evento:",
-                              textAlign: TextAlign.left,
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Text("Fecha Del Evento:\n " + evento.fecha,
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: 13,
                               ))),
-                      Container(
-                          padding: new EdgeInsets.symmetric(
-                              horizontal: 2.0, vertical: 7.0),
-                          width: 75,
-                          height: 30,
-                          child: Text(evento.fecha,
-                              overflow: TextOverflow.clip,
-                              textAlign: TextAlign.left,
-                              style: TextStyle(fontSize: 13))),
-                      Container(
-                        padding: new EdgeInsets.symmetric(
-                            horizontal: 2.0, vertical: 7.0),
-                        width: 75,
-                        height: 30,
-                        /* child: Text(evento.fecha,
-                              overflow: TextOverflow.clip,
-                              textAlign: TextAlign.left,
-                              style: TextStyle(fontSize: 13))*/
-                      )
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                              padding: EdgeInsets.all(10),
+                              child: LinkWell(evento.descripcion,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.orange,
+                                    fontSize: 15,
+                                  ))))
                     ]),
+                SizedBox(
+                  height: 10,
+                ),
               ],
             )),
         const Divider(
-          height: 20,
-          thickness: 5,
+          height: 8,
+          thickness: 2,
           indent: 20,
           endIndent: 20,
         ),
@@ -144,7 +135,7 @@ class FiltroEventoState extends State<FiltroEvento> {
             Align(
               alignment: Alignment.center,
               child: Container(
-                padding: EdgeInsets.all(28),
+                padding: EdgeInsets.all(20),
                 child: Text(
                   'Últimos Eventos Calistenia Chile',
                   style: TextStyle(
@@ -155,7 +146,7 @@ class FiltroEventoState extends State<FiltroEvento> {
               ),
             ),
             const Divider(
-              height: 20,
+              height: 8,
               thickness: 5,
               indent: 20,
               endIndent: 20,
