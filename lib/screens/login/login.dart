@@ -83,13 +83,6 @@ class _Login extends State<Login> {
           TextFieldContainer(
             child: TextFormField(
               controller: emailController,
-              onChanged: (value) {
-                if (value.isEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Debe ingresar email")));
-                }
-                return null;
-              },
               cursorColor: Colors.white,
               // keyboardType: TextInputType.number,
               style: TextStyle(
@@ -120,13 +113,6 @@ class _Login extends State<Login> {
             child: TextFormField(
               controller: passController,
               obscureText: _isHidden,
-              onChanged: (value) {
-                if (value.isEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Debe ingresar contraseña")));
-                }
-                return null;
-              },
               cursorColor: Colors.white,
               style: TextStyle(
                   color: Colors.white,
@@ -160,6 +146,7 @@ class _Login extends State<Login> {
           SizedBox(
             height: 40,
           ),
+
           //Spacer(),
           RawMaterialButton(
             constraints: BoxConstraints(
@@ -175,11 +162,11 @@ class _Login extends State<Login> {
             elevation: 2.0,
             fillColor: Colors.orange[900],
             child: Text(
-              'Entrenar',
+              'ENTRENAR',
               style: TextStyle(
                   color: Colors.white,
                   letterSpacing: 2.6,
-                  fontSize: 25,
+                  fontSize: 23,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'Ubuntu'),
             ),

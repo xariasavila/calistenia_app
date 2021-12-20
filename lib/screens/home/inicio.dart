@@ -26,7 +26,7 @@ class _InicioState extends State<Inicio> {
             Align(
               alignment: Alignment.center,
               child: Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(20),
                 child: Text(
                   'Bienvenido! Entérate de lo último!',
                   textAlign: TextAlign.center,
@@ -58,7 +58,7 @@ class _InicioState extends State<Inicio> {
                       child: Column(
                     children: <Widget>[
                       Ink.image(
-                        height: 170,
+                        height: 150,
                         fit: BoxFit.cover,
                         image: AssetImage('assets/images/noticias.jpg'),
                         child: InkWell(
@@ -100,7 +100,7 @@ class _InicioState extends State<Inicio> {
                       child: Column(
                     children: <Widget>[
                       Ink.image(
-                        height: 170,
+                        height: 150,
                         fit: BoxFit.cover,
                         image: AssetImage('assets/images/eventos.jpg'),
                         child: InkWell(

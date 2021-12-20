@@ -16,8 +16,13 @@ class Ejercicios extends StatelessWidget {
         ),
         body: ListView(
           children: <Widget>[
-            //Container(color: Colors.black, child: titulo(context)),
             titulo(context),
+            const Divider(
+              height: 20,
+              thickness: 5,
+              indent: 20,
+              endIndent: 20,
+            ),
             columnaEjercicios(context),
           ],
         ));
@@ -28,11 +33,10 @@ Widget columnaEjercicios(BuildContext context) {
   return Column(
     children: [
       Card(
-          shadowColor: Colors.orange[600],
           color: Colors.green,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-          margin: EdgeInsets.all(30),
+          margin: EdgeInsets.all(20),
           elevation: 8,
           clipBehavior: Clip.hardEdge,
           child: ClipRRect(
@@ -40,7 +44,7 @@ Widget columnaEjercicios(BuildContext context) {
             children: <Widget>[
               Ink.image(
                   image: AssetImage('assets/images/eje1.jpg'),
-                  height: 180,
+                  height: 150,
                   //width: 200,
                   fit: BoxFit.cover,
                   child: InkWell(
@@ -63,20 +67,25 @@ Widget columnaEjercicios(BuildContext context) {
                       ))),
             ],
           ))),
+      const Divider(
+        height: 20,
+        thickness: 5,
+        indent: 20,
+        endIndent: 20,
+      ),
       Card(
-          shadowColor: Colors.orange[600],
           color: Colors.orange,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
           clipBehavior: Clip.hardEdge,
-          margin: EdgeInsets.all(30),
+          margin: EdgeInsets.all(20),
           elevation: 8,
           child: ClipRRect(
               child: Column(
             children: <Widget>[
               Ink.image(
                   image: AssetImage('assets/images/eje2.jpg'),
-                  height: 180,
+                  height: 150,
                   //width: 200,
                   fit: BoxFit.cover,
                   child: InkWell(
@@ -98,20 +107,25 @@ Widget columnaEjercicios(BuildContext context) {
                       ))),
             ],
           ))),
+      const Divider(
+        height: 20,
+        thickness: 5,
+        indent: 20,
+        endIndent: 20,
+      ),
       Card(
-          shadowColor: Colors.orange[600],
           color: Colors.red,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           clipBehavior: Clip.hardEdge,
-          margin: EdgeInsets.all(30),
+          margin: EdgeInsets.all(20),
           elevation: 8,
           child: ClipRRect(
               child: Column(
             children: <Widget>[
               Ink.image(
                   image: AssetImage('assets/images/eje3.jpg'),
-                  height: 180,
+                  height: 150,
                   //width: 200,
                   fit: BoxFit.cover,
                   child: InkWell(

@@ -28,7 +28,7 @@ class DetalleRutina extends StatelessWidget {
                       child: Column(children: <Widget>[
                     Ink.image(
                       image: AssetImage('assets/images/youtube.JPG'),
-                      height: 150,
+                      height: 120,
                       //width: 200,
                       fit: BoxFit.cover,
                     ),
@@ -42,7 +42,7 @@ class DetalleRutina extends StatelessWidget {
                                   Colors.green),
                             ),
                             onPressed: followLink,
-                            child: Text("VER EJERCICIO")),
+                            child: Text("VER RUTINA")),
                       ),
                     if (rutina.iddificultad == "717592934008586241")
                       Link(
@@ -54,7 +54,7 @@ class DetalleRutina extends StatelessWidget {
                                   Colors.orange),
                             ),
                             onPressed: followLink,
-                            child: Text("VER EJERCICIO")),
+                            child: Text("VER RUTINA")),
                       ),
                     if (rutina.iddificultad == "717592951292395521")
                       Link(
@@ -66,7 +66,7 @@ class DetalleRutina extends StatelessWidget {
                                   MaterialStateProperty.all<Color>(Colors.red),
                             ),
                             onPressed: followLink,
-                            child: Text("VER EJERCICIO")),
+                            child: Text("VER RUTINA")),
                       ),
                   ]))),
               const Divider(

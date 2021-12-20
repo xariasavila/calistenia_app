@@ -29,7 +29,7 @@ class DetalleEjercicio extends StatelessWidget {
                       child: Column(children: <Widget>[
                     Ink.image(
                       image: AssetImage('assets/images/youtube.JPG'),
-                      height: 150,
+                      height: 120,
                       //width: 200,
                       fit: BoxFit.cover,
                     ),
@@ -117,7 +117,7 @@ class DetalleEjercicio extends StatelessWidget {
                 if (ejercicio.iddificultad == "717592951292395521")
                   Chip(
                     backgroundColor: Colors.red,
-                    label: Text("DIFÍCIL",
+                    label: Text("AVANZADO",
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,

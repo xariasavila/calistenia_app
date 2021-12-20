@@ -87,6 +87,9 @@ class _MapaState extends State<Mapa> {
                         options: MapOptions(
                             center: latLng.LatLng(0, 0),
                             zoom: 15,
+                            interactiveFlags: InteractiveFlag.pinchZoom |
+                                InteractiveFlag.drag,
+
                             // Stop centering the location marker on the map if user interacted with the map.
                             onPositionChanged:
                                 (MapPosition position, bool hasGesture) {
@@ -112,22 +115,27 @@ class _MapaState extends State<Mapa> {
                               centerOnLocationUpdate: _centerOnLocationUpdate,
                             ),
                           ),
-                          Positioned(
-                            right: 20,
-                            bottom: 20,
-                            child: FloatingActionButton(
-                              backgroundColor: Colors.orange,
-                              onPressed: () {
-                                setState(() => _centerOnLocationUpdate =
-                                    CenterOnLocationUpdate.always);
-                                _centerCurrentLocationStreamController.add(15);
-                              },
-                              child: Icon(
-                                Icons.my_location,
-                                color: Colors.black,
-                              ),
-                            ),
-                          )
+                          Stack(
+                              alignment: Alignment.bottomCenter,
+                              children: <Widget>[
+                                Positioned(
+                                  right: 20,
+                                  bottom: 20,
+                                  child: FloatingActionButton(
+                                    backgroundColor: Colors.orange,
+                                    onPressed: () {
+                                      setState(() => _centerOnLocationUpdate =
+                                          CenterOnLocationUpdate.always);
+                                      _centerCurrentLocationStreamController
+                                          .add(15);
+                                    },
+                                    child: Icon(
+                                      Icons.my_location,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                )
+                              ])
                         ],
                         layers: [
                           MarkerLayerOptions(markers: arregloParques)

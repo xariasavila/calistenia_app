@@ -12,9 +12,6 @@ const defaultPadding = 16.0;
 const logoDarkTheme = "assets/icons/Only_logo_dark_theme.svg";
 const logoLightTheme = "assets/icons/Only_logo_light_theme.svg";
 
-const requiredField = "This field is required";
-const invalidEmail = "Enter a valid email address";
-
 const InputDecoration otpInputDecoration = InputDecoration(
   filled: false,
   border: UnderlineInputBorder(),

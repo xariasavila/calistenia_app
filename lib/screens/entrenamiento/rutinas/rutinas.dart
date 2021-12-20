@@ -18,8 +18,26 @@ class Rutinas extends StatelessWidget {
           //padding: EdgeInsets.all(6.0),
           children: <Widget>[
             titulo(context),
+            const Divider(
+              height: 20,
+              thickness: 5,
+              indent: 20,
+              endIndent: 20,
+            ),
             cardRutinasFacil(context),
+            const Divider(
+              height: 20,
+              thickness: 5,
+              indent: 20,
+              endIndent: 20,
+            ),
             cardRutinasIntermedio(context),
+            const Divider(
+              height: 20,
+              thickness: 5,
+              indent: 20,
+              endIndent: 20,
+            ),
             cardRutinasAvanzado(context)
           ],
         ));
@@ -28,18 +46,17 @@ class Rutinas extends StatelessWidget {
 
 Widget cardRutinasFacil(BuildContext context) {
   return Card(
-      shadowColor: Colors.orange[600],
       color: Colors.green,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       clipBehavior: Clip.hardEdge,
       elevation: 5,
-      margin: EdgeInsets.all(30),
+      margin: EdgeInsets.all(20),
       child: ClipRRect(
         child: Column(
           children: <Widget>[
             Ink.image(
                 image: AssetImage('assets/images/rutina1.jpg'),
-                height: 180,
+                height: 150,
                 //width: 200,
                 fit: BoxFit.cover,
                 child: InkWell(
@@ -65,18 +82,17 @@ Widget cardRutinasFacil(BuildContext context) {
 
 Widget cardRutinasIntermedio(BuildContext context) {
   return Card(
-      shadowColor: Colors.orange[600],
       color: Colors.orange,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       clipBehavior: Clip.hardEdge,
-      margin: EdgeInsets.all(30),
+      margin: EdgeInsets.all(20),
       elevation: 10,
       child: ClipRRect(
         child: Column(
           children: <Widget>[
             Ink.image(
                 image: AssetImage('assets/images/rutina2.jpg'),
-                height: 180,
+                height: 150,
                 //width: 200,
                 fit: BoxFit.cover,
                 child: InkWell(
@@ -102,18 +118,17 @@ Widget cardRutinasIntermedio(BuildContext context) {
 
 Widget cardRutinasAvanzado(BuildContext context) {
   return Card(
-      shadowColor: Colors.orange[600],
       color: Colors.red,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       clipBehavior: Clip.hardEdge,
-      margin: EdgeInsets.all(30),
+      margin: EdgeInsets.all(20),
       elevation: 10,
       child: ClipRRect(
         child: Column(
           children: <Widget>[
             Ink.image(
                 image: AssetImage('assets/images/rutina3.jpg'),
-                height: 180,
+                height: 150,
                 //width: 200,
                 fit: BoxFit.cover,
                 child: InkWell(
