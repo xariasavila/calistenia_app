@@ -1,8 +1,8 @@
 class Parque {
   final String idparque;
   final String nombre;
-  final String latitud;
-  final String longitud;
+  final double latitud;
+  final double longitud;
   final String descripcion;
 
   Parque({
@@ -18,8 +18,8 @@ class Parque {
         idparque: json['idparque'] as String,
         nombre: json['nombre'] as String,
         descripcion: json['descripcion'] as String,
-        latitud: json['latitud'] as String,
-        longitud: json['longitud'] as String);
+        latitud: json['latitud'] as double,
+        longitud: json['longitud'] as double);
   }
 
   Map<String, dynamic> toJson() => {

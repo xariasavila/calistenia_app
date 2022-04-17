@@ -57,9 +57,8 @@ class _MapaState extends State<Mapa> {
                         height: 80.0,
 
                         //point: latLng.LatLng(-33.44376988704037, -70.65026066620514),
-                        point: latLng.LatLng(
-                            double.parse(snapshot.data![i].latitud),
-                            double.parse(snapshot.data![i].longitud)),
+                        point: latLng.LatLng(snapshot.data![i].latitud,
+                            snapshot.data![i].longitud),
                         builder: (ctx) => _mapContainer(
                             snapshot.data![i].nombre,
                             //snapshot.data![i].direccion,

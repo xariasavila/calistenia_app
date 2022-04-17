@@ -124,14 +124,16 @@ class FiltroNoticiaState extends State<FiltroNoticia> {
                     ]),
               ],
             )),
+        SizedBox(
+          height: 10,
+        ),
         const Divider(
-          height: 20,
-          thickness: 5,
+          height: 8,
+          thickness: 2,
           indent: 20,
           endIndent: 20,
         ),
       ]);
-
   @override
   Widget build(BuildContext context) => Scaffold(
         backgroundColor: Colors.grey.shade900,
